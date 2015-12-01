@@ -6,7 +6,7 @@
 		echo $this->Form->input('id');
 		echo $this->Form->input('state');
 		echo $this->Form->input('date');
-		echo $this->Form->input('sound');
+		echo $this->Form->input('sound_id');
 		echo $this->Form->input('event_id');
 	?>
 	</fieldset>

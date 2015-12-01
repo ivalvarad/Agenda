@@ -7,7 +7,7 @@
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('id'); ?></th>
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('state'); ?></th>
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('date'); ?></th>
-				<th style="text-align: center;"><?php echo $this->Paginator->sort('sound'); ?></th>
+				<th style="text-align: center;"><?php echo $this->Paginator->sort('sound_id'); ?></th>
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('event_id'); ?></th>
 				<th class="actions" style="text-align: center;"><?php echo __('Actions'); ?></th>
 			</tr>
@@ -18,7 +18,7 @@
 					<td><?php echo h($alarm['Alarm']['id']); ?>&nbsp;</td>
 					<td><?php echo h($alarm['Alarm']['state']); ?>&nbsp;</td>
 					<td><?php echo h($alarm['Alarm']['date']); ?>&nbsp;</td>
-					<td><?php echo h($alarm['Alarm']['sound']); ?>&nbsp;</td>
+					<td><?php echo h($alarm['Alarm']['sound_id']); ?>&nbsp;</td>
 					<td>
 						<?php echo $this->Html->link($alarm['Event']['id'], array('controller' => 'events', 'action' => 'view', $alarm['Event']['id'])); ?>
 					</td>

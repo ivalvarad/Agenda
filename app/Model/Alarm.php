@@ -29,6 +29,16 @@ class Alarm extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
+		),
+		'Sound' => array(
+			'className' => 'Sound',
+			'foreignKey' => 'sound_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
 		)
+		
+		
 	);
+
 }
