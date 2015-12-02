@@ -17,11 +17,11 @@ class UsersController extends AppController {
  */
 	public $components = array('Paginator', 'Flash', 'Session');
 
-	/* public function beforeFilter() {
+	public function beforeFilter() {
 		parent::beforeFilter();
 		// Allow users to register and logout.
 		$this->Auth->allow('add', 'logout');
-	} */
+	}
 	
 /**
  * index method

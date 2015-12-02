@@ -36,6 +36,20 @@ class User extends AppModel {
                 'rule' => 'notBlank',
                 'message' => 'A password is required'
             )
-        )
+        ),
+		'password_confirm' => array(
+			'required' => array(
+                'rule' => 'notBlank',
+                'message' => 'Must retype the password'
+            ),
+			'compare'    => array(
+				'rule'      => array('verify_password'),
+				'message' => 'The passwords you entered do not match.',
+			)
+		)
     );
+	
+	public function verify_password() {
+		return $this->data[$this->alias]['password'] === $this->data[$this->alias]['password_confirm'];
+	}
 }

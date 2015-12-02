@@ -7,6 +7,7 @@
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('id'); ?></th>
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('name'); ?></th>
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('lastname'); ?></th>
+				<th style="text-align: center;"><?php echo $this->Paginator->sort('username'); ?></th>
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('email'); ?></th>
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('picture'); ?></th>
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('message'); ?></th>
@@ -20,6 +21,7 @@
 					<td><?php echo h($user['User']['id']); ?>&nbsp;</td>
 					<td><?php echo h($user['User']['name']); ?>&nbsp;</td>
 					<td><?php echo h($user['User']['lastname']); ?>&nbsp;</td>
+					<td><?php echo h($user['User']['username']); ?>&nbsp;</td>
 					<td><?php echo h($user['User']['email']); ?>&nbsp;</td>
 					<td><?php echo h($user['User']['picture']); ?>&nbsp;</td>
 					<td><?php echo h($user['User']['message']); ?>&nbsp;</td>
