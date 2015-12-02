@@ -16,11 +16,13 @@
 			<?php echo h($alarm['Alarm']['date']); ?>
 			&nbsp;
 		</dd>
+		
 		<dt><?php echo __('Sound'); ?></dt>
 		<dd>
-			<?php echo h($alarm['Alarm']['sound']); ?>
+			<?php echo $this->Html->link($alarm['Sound']['id'], array('controller' => 'sounds', 'action' => 'view', $alarm['Sound']['id'])); ?>
 			&nbsp;
 		</dd>
+		
 		<dt><?php echo __('Event'); ?></dt>
 		<dd>
 			<?php echo $this->Html->link($alarm['Event']['id'], array('controller' => 'events', 'action' => 'view', $alarm['Event']['id'])); ?>

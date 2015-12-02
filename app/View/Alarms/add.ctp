@@ -5,7 +5,7 @@
 	<?php
 		echo $this->Form->input('state');
 		echo $this->Form->input('date');
-		echo $this->Form->input('sound');
+		echo $this->Form->input('sound_id', array('class' => 'form-control', 'label' => 'Sound'));
 		echo $this->Form->input('event_id');
 	?>
 	</fieldset>
