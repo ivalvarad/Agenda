@@ -13,4 +13,5 @@ class Category extends AppModel {
  */
 	public $displayField = 'name';
 
+	public $hasOne = 'Event';
 }

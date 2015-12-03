@@ -12,5 +12,6 @@ class Priority extends AppModel {
  * @var string
  */
 	public $displayField = 'name';
-
+	
+	public $hasOne = 'Event';
 }

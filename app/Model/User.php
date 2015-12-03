@@ -14,6 +14,8 @@ class User extends AppModel {
  */
 	public $displayField = 'name';
 	
+	public $hasOne = 'Event';
+	
 	public function beforeSave($options = array()) {
 		if (isset($this->data[$this->alias]['password'])) {
 			$passwordHasher = new BlowfishPasswordHasher();
