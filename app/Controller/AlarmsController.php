@@ -59,7 +59,7 @@ class AlarmsController extends AppController {
 			$this->Alarm->create();
 			if ($this->Alarm->save($this->request->data)) {
 				$this->Flash->success(__('The alarm has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'cambiar_sonido'));
 			} else {
 				$this->Flash->error(__('The alarm could not be saved. Please, try again.'));
 			}
@@ -119,5 +119,33 @@ class AlarmsController extends AppController {
 			$this->Flash->error(__('The alarm could not be deleted. Please, try again.'));
 		}
 		return $this->redirect(array('action' => 'index'));
+	}
+	
+	
+	public function cambiar_sonido() {
+		$this->Alarm->recursive = 0;
+		$this->set('alarms', $this->Paginator->paginate());
+	}
+	
+	
+	public function cambio($id = null) {
+		if (!$this->Alarm->exists($id)) {
+			throw new NotFoundException(__('Invalid alarm'));
+		}
+		if ($this->request->is(array('post', 'put'))) {
+			if ($this->Alarm->save($this->request->data)) {
+				$this->Flash->success(__('The alarm has been saved.'));
+				return $this->redirect(array('action' => 'cambiar_sonido'));
+			} else {
+				$this->Flash->error(__('The alarm could not be saved. Please, try again.'));
+			}
+		} else {
+			$options = array('conditions' => array('Alarm.' . $this->Alarm->primaryKey => $id));
+			$this->request->data = $this->Alarm->find('first', $options);
+		}
+		$events = $this->Alarm->Event->find('list');
+		$this->set(compact('events'));
+		$sounds = $this->Alarm->Sound->find('list');
+		$this->set(compact('sounds'));
 	}
 }

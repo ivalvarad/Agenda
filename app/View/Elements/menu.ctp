@@ -18,7 +18,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Personalizar </a></li>
-                <li> <?php echo $this->Html->link('Opciones de alarma',array('controller' => 'alarms','action' => 'edit')) ?> </li>
+                <li> <?php echo $this->Html->link('Opciones de alarma',array('controller' => 'alarms','action' => 'cambiar_sonido')) ?> </li>
               </ul>
             </li>
 			
