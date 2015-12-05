@@ -23,18 +23,15 @@
 						<?php echo $this->Html->link($alarm['Event']['id'], array('controller' => 'events', 'action' => 'view', $alarm['Event']['id'])); ?>
 					</td>
 					<td>
-					
-					 <?php echo $this->Html->media('zombie.mp3'); ?>
 
-					 // Output
-					 <audio src="/app/webroot/files/zombie.mp3" type ="audio/mp3" controls="controls" ></audio>
+					 <audio src="/Agendaapp/files/<?php echo ($alarm['Alarm']['sound_id']); ?>.mp3" controls> </audio>
+			 
+					 
 					</td>
-					
 
 
 
-					
-					
+
 					
 					
 					
