@@ -22,6 +22,7 @@ class Alarm extends AppModel {
  *
  * @var array
  */
+	
 	public $belongsTo = array(
 		'Event' => array(
 			'className' => 'Event',
@@ -37,8 +38,8 @@ class Alarm extends AppModel {
 			'fields' => '',
 			'order' => ''
 		)
-		
-		
 	);
+	
+	
 
 }

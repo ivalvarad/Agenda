@@ -12,5 +12,21 @@ class Event extends AppModel {
  * @var string
  */
 	public $displayField = 'id';
-
+	
+	public $hasOne = 'Alarm';
+	
+    public $belongsTo = array(
+		'User' => array(
+			'className' => 'User',
+			'foreignKey' => 'user_id'
+		),
+		'Category' => array(
+			'className' => 'Category',
+			'foreignKey' => 'category_id'
+		),
+		'Priority' => array(
+			'className' => 'Priority',
+			'foreignKey' => 'priority_id'
+		)
+	);
 }
