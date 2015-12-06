@@ -16,6 +16,7 @@ class UsersController extends AppController {
  * @var array
  */
 	public $components = array('Paginator', 'Flash', 'Session');
+	public $helpers = array('Html');
 	
 	public function beforeFilter() {
 		parent::beforeFilter();
@@ -147,6 +148,15 @@ class UsersController extends AppController {
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->save($this->request->data)) {
+				if($this->request->data['User']['archivo']['error'] == 0 &&  $this->request->data['User']['archivo']['size'] > 0){
+					  //debug($this->request->data['User']);
+					  $destino = WWW_ROOT.'img'.DS;
+					  move_uploaded_file($this->request->data['User']['archivo']['tmp_name'], $destino.$this->request->data['User']['archivo']['name']);
+					  //$id = $this->request->data['User']['id'];
+					  $this->User->read(null, $id);
+					  $this->User->set('picture', $this->request->data['User']['archivo']['name']);
+					  $this->User->save();
+				}
                 $this->Flash->success(__('The user has been saved'));
                 return $this->redirect(array('action' => 'index'));
             }

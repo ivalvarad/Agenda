@@ -1,27 +1,20 @@
 <div class="users form">
 <?php echo $this->Form->create('User', array('type' => 'file')); ?>
 	<fieldset>
-		<legend><?php echo __('Add User'); ?></legend>
+		<legend><?php echo __('Crear usuario'); ?></legend>
 	<?php
 		echo $this->Form->input('id', array('type' => 'hidden'));
-		echo $this->Form->input('name');
-		echo $this->Form->input('lastname');
-		echo $this->Form->input('username');
-		echo $this->Form->input('password');
-		echo $this->Form->input('password_confirm', array('type' => 'password'));
-		echo $this->Form->input('email');
+		echo $this->Form->input('name', array('label'=>'Nombre'));
+		echo $this->Form->input('lastname', array('label'=>'Apellido(s)'));
+		echo $this->Form->input('username', array('label'=>'Nombre de usuario'));
+		echo $this->Form->input('password', array('label'=>'Contraseña'));
+		echo $this->Form->input('password_confirm', array('type' => 'password', 'label'=>'Confirmar contraseña'));
+		echo $this->Form->input('email', array('label'=>'Correo'));
 		//echo $this->Form->input('picture');
-		echo $this->Form->input('archivo', array('type' => 'file', 'label'=>'Escoja una foto:'));
-		echo $this->Form->input('message');
-		echo $this->Form->input('timezone');
+		echo $this->Form->input('archivo', array('type' => 'file', 'label'=>'Fotografía:'));
+		echo $this->Form->input('message', array('label'=>'Mensaje personal'));
+		echo $this->Form->input('timezone', array('label'=>'Zona horaria'));
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?></li>
-	</ul>
+<?php echo $this->Form->end(__('Registrarme')); ?>
 </div>

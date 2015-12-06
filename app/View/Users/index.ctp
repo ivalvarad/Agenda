@@ -1,17 +1,16 @@
 <div class="users index">
 	<h2><?php echo __('Users'); ?></h2>
-	<h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> &nbsp; Usuario</h2>
+	<h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> &nbsp; Mi usuario</h2>
 	<table class="table" cellpadding="0" cellspacing="0" border="1">
 		<thead>
 			<tr>
-				<th style="text-align: center;"><?php echo $this->Paginator->sort('name'); ?></th>
-				<th style="text-align: center;"><?php echo $this->Paginator->sort('lastname'); ?></th>
-				<th style="text-align: center;"><?php echo $this->Paginator->sort('username'); ?></th>
-				<th style="text-align: center;"><?php echo $this->Paginator->sort('email'); ?></th>
-				<th style="text-align: center;"><?php echo $this->Paginator->sort('picture'); ?></th>
-				<th style="text-align: center;"><?php echo $this->Paginator->sort('message'); ?></th>
-				<th style="text-align: center;"><?php echo $this->Paginator->sort('timezone'); ?></th>
-				<th style="text-align: center;" class="actions"><?php echo __('Actions'); ?></th>
+				<th style="text-align: center;"><?php echo $this->Paginator->sort('nomnre'); ?></th>
+				<th style="text-align: center;"><?php echo $this->Paginator->sort('apellido(s)'); ?></th>
+				<th style="text-align: center;"><?php echo $this->Paginator->sort('usuario'); ?></th>
+				<th style="text-align: center;"><?php echo $this->Paginator->sort('correo'); ?></th>
+				<th style="text-align: center;"><?php echo $this->Paginator->sort('Mensaje'); ?></th>
+				<th style="text-align: center;"><?php echo $this->Paginator->sort('Zona horaria'); ?></th>
+				<th style="text-align: center;" class="actions"><?php echo __('Acciones'); ?></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -23,24 +22,23 @@
 					<td><?php echo h($user['User']['lastname']); ?>&nbsp;</td>
 					<td><?php echo h($user['User']['username']); ?>&nbsp;</td>
 					<td><?php echo h($user['User']['email']); ?>&nbsp;</td>
-					<td><?php echo h($user['User']['picture']); ?>&nbsp;</td>
 					<td><?php echo h($user['User']['message']); ?>&nbsp;</td>
 					<td><?php echo h($user['User']['timezone']); ?>&nbsp;</td>
 					<td class="actions" style="text-align: center;">
 						<div class="btn-group" role="group" aria-label="...">
 							<div class="btn-group" role="group">
 								<button type="button" class="btn btn-default">
-									<?php echo $this->Html->link(__('View'), array('action' => 'view', $user['User']['id'])); ?>
+									<?php echo $this->Html->link(__('Expandir'), array('action' => 'view', $user['User']['id'])); ?>
 								</button>
 							</div>
 							<div class="btn-group" role="group">
 								<button type="button" class="btn btn-default">
-									<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $user['User']['id'])); ?>
+									<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $user['User']['id'])); ?>
 								</button>
 							</div>
 							<div class="btn-group" role="group">
 								<button type="button" class="btn btn-default">
-									<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $user['User']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $user['User']['id']))); ?>
+									<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $user['User']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $user['User']['id']))); ?>
 								</button>
 							</div>
 						</div>			
@@ -73,8 +71,8 @@
 				</nav>
 			</div>
 		</div>
-		<?php if($this->Session->read("Auth.User.id") === null){ ?>
-			<div class="actions">
+		<?php //if($this->Session->read("Auth.User.id") === null){ ?>
+			<!-- <div class="actions">
 				<div class="panel panel-default" style="width: 30%;">
 					<div class="panel-heading">
 						<h3>Otras acciones</h3>
@@ -85,7 +83,7 @@
 						</ul>
 					</div>
 				</div>
-			</div>
-		<?php } ?>
+			</div> -->
+		<?php //} ?>
 		
 		

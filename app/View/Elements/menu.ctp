@@ -24,7 +24,14 @@
 			<li> <?php echo $this->Html->link('Opciones de alarma',array('controller' => 'alarms','action' => 'cambiar_sonido')) ?> </li>
 		  </ul>
 		</li>
+		<?php
+			if ($_SESSION['usernm'] !== null){ 
+			?>
+				 <li><?php echo $this->Html->link(__('Salir de: '.$_SESSION['usernm'], true), array('controller'=>'users','action' => 'logout')); ?></li>
+			<?php }
+		?>
 	  </ul>
+	  
 	</div><!--/.nav-collapse -->
 	
   <!-- </div>
