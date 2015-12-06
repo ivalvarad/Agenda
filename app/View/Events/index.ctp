@@ -9,7 +9,6 @@
 			<th style="text-align: center;"><?php echo $this->Paginator->sort('enddate'); ?></th>
 			<th style="text-align: center;"><?php echo $this->Paginator->sort('description'); ?></th>
 			<th style="text-align: center;"><?php echo $this->Paginator->sort('state'); ?></th>
-			<th style="text-align: center;"><?php echo $this->Paginator->sort('user_id'); ?></th>
 			<th style="text-align: center;"><?php echo $this->Paginator->sort('category_id'); ?></th>
 			<th style="text-align: center;"><?php echo $this->Paginator->sort('priority_id'); ?></th>
 			<th style="text-align: center;" class="actions"><?php echo __('Actions'); ?></th>
@@ -22,9 +21,8 @@
 		<td><?php echo h($event['Event']['enddate']); ?>&nbsp;</td>
 		<td><?php echo h($event['Event']['description']); ?>&nbsp;</td>
 		<td><?php echo h($event['Event']['state']); ?>&nbsp;</td>
-		<td><?php echo h($event['Event']['user_id']); ?>&nbsp;</td>
-		<td><?php echo h($event['Event']['category_id']); ?>&nbsp;</td>
-		<td><?php echo h($event['Event']['priority_id']); ?>&nbsp;</td>
+		<td><?php echo h($event['Category']['name']); ?>&nbsp;</td>
+		<td><?php echo h($event['Priority']['name']); ?>&nbsp;</td>
 		<td class="actions" style="text-align: center;">
 			<div class="btn-group" role="group" aria-label="...">
 				<div class="btn-group" role="group">
