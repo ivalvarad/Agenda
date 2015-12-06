@@ -1,10 +1,9 @@
 <div class="users index">
 	<h2><?php echo __('Users'); ?></h2>
-	<h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> &nbsp; Usuarios</h2>
+	<h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> &nbsp; Usuario</h2>
 	<table class="table" cellpadding="0" cellspacing="0" border="1">
 		<thead>
 			<tr>
-				<th style="text-align: center;"><?php echo $this->Paginator->sort('id'); ?></th>
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('name'); ?></th>
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('lastname'); ?></th>
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('username'); ?></th>
@@ -18,7 +17,6 @@
 		<tbody>
 			<?php foreach ($users as $user): ?>
 				<tr>
-					<td><?php echo h($user['User']['id']); ?>&nbsp;</td>
 					<td><?php echo h($user['User']['name']); ?>&nbsp;</td>
 					<td><?php echo h($user['User']['lastname']); ?>&nbsp;</td>
 					<td><?php echo h($user['User']['username']); ?>&nbsp;</td>
@@ -72,15 +70,19 @@
 				</nav>
 			</div>
 		</div>
-		<div class="actions">
-			<div class="panel panel-default" style="width: 30%;">
-				<div class="panel-heading">
-					<h3>Otras acciones</h3>
-				</div>
-				<div class="panel-body">
-					<ul>
-						<li><?php echo $this->Html->link(__('New User'), array('action' => 'add')); ?></li>
-					</ul>
+		<?php if($this->Session->read("Auth.User.id") === null){ ?>
+			<div class="actions">
+				<div class="panel panel-default" style="width: 30%;">
+					<div class="panel-heading">
+						<h3>Otras acciones</h3>
+					</div>
+					<div class="panel-body">
+						<ul>
+							<li><?php echo $this->Html->link(__('New User'), array('action' => 'add')); ?></li>
+						</ul>
+					</div>
 				</div>
 			</div>
-		</div>
+		<?php } ?>
+		
+		

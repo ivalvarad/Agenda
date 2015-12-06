@@ -1,23 +1,22 @@
 <div class="events index">
 	<h2><?php echo __('Events'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
+	<h2><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> &nbsp; Agenda</h2>
+	<table class="table" cellpadding="0" cellspacing="0" border="1">
 	<thead>
 	<tr>
-			<th><?php echo $this->Paginator->sort('id'); ?></th>
-			<th><?php echo $this->Paginator->sort('startdate'); ?></th>
-			<th><?php echo $this->Paginator->sort('enddate'); ?></th>
-			<th><?php echo $this->Paginator->sort('description'); ?></th>
-			<th><?php echo $this->Paginator->sort('state'); ?></th>
-			<th><?php echo $this->Paginator->sort('user_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('category_id'); ?></th>
-			<th><?php echo $this->Paginator->sort('priority_id'); ?></th>
-			<th class="actions"><?php echo __('Actions'); ?></th>
+			<th style="text-align: center;"><?php echo $this->Paginator->sort('startdate'); ?></th>
+			<th style="text-align: center;"><?php echo $this->Paginator->sort('enddate'); ?></th>
+			<th style="text-align: center;"><?php echo $this->Paginator->sort('description'); ?></th>
+			<th style="text-align: center;"><?php echo $this->Paginator->sort('state'); ?></th>
+			<th style="text-align: center;"><?php echo $this->Paginator->sort('user_id'); ?></th>
+			<th style="text-align: center;"><?php echo $this->Paginator->sort('category_id'); ?></th>
+			<th style="text-align: center;"><?php echo $this->Paginator->sort('priority_id'); ?></th>
+			<th style="text-align: center;" class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	</thead>
 	<tbody>
 	<?php foreach ($events as $event): ?>
 	<tr>
-		<td><?php echo h($event['Event']['id']); ?>&nbsp;</td>
 		<td><?php echo h($event['Event']['startdate']); ?>&nbsp;</td>
 		<td><?php echo h($event['Event']['enddate']); ?>&nbsp;</td>
 		<td><?php echo h($event['Event']['description']); ?>&nbsp;</td>
@@ -25,10 +24,24 @@
 		<td><?php echo h($event['Event']['user_id']); ?>&nbsp;</td>
 		<td><?php echo h($event['Event']['category_id']); ?>&nbsp;</td>
 		<td><?php echo h($event['Event']['priority_id']); ?>&nbsp;</td>
-		<td class="actions">
-			<?php echo $this->Html->link(__('View'), array('action' => 'view', $event['Event']['id'])); ?>
-			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $event['Event']['id'])); ?>
-			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $event['Event']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $event['Event']['id']))); ?>
+		<td class="actions" style="text-align: center;">
+			<div class="btn-group" role="group" aria-label="...">
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-default">
+						<?php echo $this->Html->link(__('View'), array('action' => 'view', $event['Event']['id'])); ?>
+					</button>
+				</div>
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-default">
+						<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $event['Event']['id'])); ?>
+					</button>
+				</div>
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-default">
+						<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $event['Event']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $event['Event']['id']))); ?>
+					</button>
+				</div>
+			</div>	
 		</td>
 	</tr>
 <?php endforeach; ?>
@@ -40,17 +53,32 @@
 		'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
 	));
 	?>	</p>
-	<div class="paging">
-	<?php
-		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
-		echo $this->Paginator->numbers(array('separator' => ''));
-		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
-	?>
+	<div class="paging" style="text-align: center;">
+	<nav>
+		<ul class="pager">
+			<li>
+				<?php 
+				echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
+				?>
+			</li>
+			<li>
+				<?php 
+				echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
+				?>
+			</li>
+		</ul>
+	</nav>
 	</div>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Event'), array('action' => 'add')); ?></li>
-	</ul>
+	<div class="panel panel-default" style="width: 30%;">
+		<div class="panel-heading">
+			<h3>Otras acciones</h3>
+		</div>
+		<div class="panel-body">
+			<ul>
+				<li><?php echo $this->Html->link(__('New Event'), array('action' => 'add')); ?></li>
+			</ul>
+		</div>
+	</div>
 </div>
