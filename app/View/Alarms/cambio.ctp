@@ -1,3 +1,11 @@
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="alarms form">
 <?php echo $this->Form->create('Alarm'); ?>
 	<fieldset>
@@ -13,7 +21,7 @@
 
 	</fieldset>
 
-	
+
 <?php echo $this->Form->end(__('Submit')); ?>
 </div>
 <div class="actions">
