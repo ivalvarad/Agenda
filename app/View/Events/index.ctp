@@ -1,5 +1,9 @@
 <div class="events index">
 	<h2><?php echo __('Events'); ?></h2>
+	
+	
+	
+	
 	<h2><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> &nbsp; Agenda</h2>
 	<table class="table" cellpadding="0" cellspacing="0" border="1">
 	<thead>
@@ -79,6 +83,14 @@
 			<ul>
 				<li><?php echo $this->Html->link(__('New Event'), array('action' => 'add')); ?></li>
 			</ul>
+			<ul>
+				<li><?php echo $this->Html->link(__(''), array('action' => 'add')); ?></li>
+			</ul>
 		</div>
 	</div>
 </div>
+
+
+
+
+
