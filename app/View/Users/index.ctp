@@ -16,6 +16,8 @@
 		</thead>
 		<tbody>
 			<?php foreach ($users as $user): ?>
+			<?php 
+			if($user['User']['username'] === $_SESSION['usernm']) { ?>
 				<tr>
 					<td><?php echo h($user['User']['name']); ?>&nbsp;</td>
 					<td><?php echo h($user['User']['lastname']); ?>&nbsp;</td>
@@ -44,6 +46,7 @@
 						</div>			
 					</td>
 				</tr>
+				<?php } ?>
 			<?php endforeach; ?>
 		</tbody>
 	</table>

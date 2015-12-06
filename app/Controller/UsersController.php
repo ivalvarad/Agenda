@@ -16,7 +16,6 @@ class UsersController extends AppController {
  * @var array
  */
 	public $components = array('Paginator', 'Flash', 'Session');
-	public $helpers = array('Html', 'Form');
 	
 	public function beforeFilter() {
 		parent::beforeFilter();
@@ -180,7 +179,8 @@ class UsersController extends AppController {
 
 	public function login() {
 		if ($this->request->is('post')) {
-			if ($this->Auth->login($this->data)) {
+			if($this->Auth->login($this->request->data)) {
+				$_SESSION['usernm'] = $this->request->data['User']['username'];
 				return $this->redirect($this->Auth->redirectUrl());
 			}
 			$this->Flash->error(__('Invalid username or password, try again'));

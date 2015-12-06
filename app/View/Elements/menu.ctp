@@ -9,12 +9,11 @@
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
 	  </button>
-	  <a class="navbar-brand" href="#">Mi agenda</a>
 	</div>
 	
 	<div id="navbar" class="navbar-collapse collapse">
 	  <ul class="nav navbar-nav">
-		<li class="active"><?php echo $this->Html->link(__('Home', true), array('controller'=>'events','action' => 'index')); ?></li>
+		<li class="active"><?php echo $this->Html->link(__('Mi agenda', true), array('controller'=>'events','action' => 'index')); ?></li>
 		<!-- <li class="active"><a href="#">Home</a></li> -->
 		<li><?php echo $this->Html->link(__('Mi perfil', true), array('controller'=>'users','action' => 'index')); ?></li>
 		<!-- <li><a href="#about">Mi perfil</a></li> -->
@@ -28,7 +27,7 @@
 	  </ul>
 	</div><!--/.nav-collapse -->
 	
-  </div>
+  <!-- </div>
   	 <div class="container">
       <div class="header clearfix">
         <nav>
@@ -42,6 +41,7 @@
         </nav>
        </div>
       </div>
+	  -->
 </nav>
 
 
