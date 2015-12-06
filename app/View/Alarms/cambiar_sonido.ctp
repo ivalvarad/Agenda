@@ -1,40 +1,51 @@
 <div class="alarms index">
 	<h2><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> &nbsp; Alarmas</h2>
-	<h2><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> &nbsp; Alarmas</h2>
+	
 	<table class="table" cellpadding="0" cellspacing="0" border="1">
 		<thead>
 			<tr>
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('id'); ?></th>
-				<th style="text-align: center;"><?php echo $this->Paginator->sort('state'); ?></th>
+				<th style="text-align: center;"><?php echo $this->Paginator->sort('state_id'); ?></th>
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('date'); ?></th>
-				<th style="text-align: center;"><?php echo $this->Paginator->sort('sound_id'); ?></th>
+				
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('event_id'); ?></th>
-				<th class="actions" style="text-align: center;"><?php echo __('Actions'); ?></th>
+				
+				
+				
+				<th class="actions" style="text-align: center;"><?php echo __('Vista previa'); ?></th>
+				<th class="actions" style="text-align: center;"><?php echo __('Acciones'); ?></th>
 			</tr>
 		</thead>
 		<tbody>
 			<?php foreach ($alarms as $alarm): ?>
 				<tr>
 					<td><?php echo h($alarm['Alarm']['id']); ?>&nbsp;</td>
-					<td><?php echo h($alarm['Alarm']['state']); ?>&nbsp; </td>
+
+					<td>
+
+						<?php foreach ($states as $state): 
+						if($state['State']['id']==$alarm['Alarm']['state_id']){
+							echo $state['State']['state'];
+						}else{
+							
+						}
+						 endforeach; ?>
+						 &nbsp; 
+					
+					
+					</td>
+
 					<td><?php echo h($alarm['Alarm']['date']); ?>&nbsp;</td>
-					<td><?php echo h($alarm['Alarm']['sound_id']); ?>&nbsp;</td>
+					
 					<td>
 						<?php echo $this->Html->link($alarm['Event']['id'], array('controller' => 'events', 'action' => 'view', $alarm['Event']['id'])); ?>
 					</td>
 					<td>
-
-					 <audio src="/Agendaapp/files/<?php echo ($alarm['Alarm']['sound_id']); ?>.mp3" controls> </audio>
-			 
-					 
+	
+						<audio src="/Agendaapp/files/<?php echo ($alarm['Alarm']['sound_id']); ?>.mp3" controls > </audio>
+					
 					</td>
 
-
-
-
-					
-					
-					
 					<td class="actions" style="text-align: center;">
 						<div class="btn-group" role="group" aria-label="...">
 
@@ -94,3 +105,35 @@
 			</div>
 
 		</div>
+		
+					<?php
+				if($this->Time->isThisWeek( $alarm['Alarm']['date'], null)&& $alarm['Alarm']['state_id']==1){
+						?>
+						
+							
+							
+							<div class="alert alert-info fade in">
+								<a href="#" class="close" data-dismiss="alert">&times;</a>
+								<audio src="/Agendaapp/files/<?php echo ($alarm['Alarm']['sound_id']); ?>.mp3" controls autoplay ="true" hidden > </audio>
+								</p>
+								<strong>¡Atención!</strong> Tienes una tarea esta semana.
+							</div>
+							
+							
+						<?php	
+						}else{
+						?>
+							
+						<?php		
+						}
+						?>
+						
+				
+						
+						
+						
+						
+						
+						
+						
+						

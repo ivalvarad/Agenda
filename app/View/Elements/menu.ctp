@@ -13,7 +13,9 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">Mi perfil</a></li>
+			
+            <li><?php echo $this->Html->link('Mi perfil',array('controller' => 'users','action' => 'view')) ?></li>
+			
 			<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones <span class="caret"></span></a>
               <ul class="dropdown-menu">

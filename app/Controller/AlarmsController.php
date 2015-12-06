@@ -68,7 +68,8 @@ class AlarmsController extends AppController {
 		$this->set(compact('events'));
 		$sounds = $this->Alarm->Sound->find('list',array('fields' => array('id','nombre_sonido')));
 		$this->set(compact('sounds'));
-		
+		$states = $this->Alarm->State->find('list',array('fields' => array('id','estado')));
+		$this->set(compact('states'));
 		
 	}
 
@@ -114,6 +115,7 @@ class AlarmsController extends AppController {
 		}
 		$this->request->allowMethod('post', 'delete');
 		if ($this->Alarm->delete()) {
+			
 			$this->Flash->success(__('The alarm has been deleted.'));
 		} else {
 			$this->Flash->error(__('The alarm could not be deleted. Please, try again.'));
@@ -125,6 +127,8 @@ class AlarmsController extends AppController {
 	public function cambiar_sonido() {
 		$this->Alarm->recursive = 0;
 		$this->set('alarms', $this->Paginator->paginate());
+		$states = $this->Alarm->State->find('list',array('fields' => array('id','estado')));
+		$this->set('states', $this->Paginator->paginate());
 	}
 	
 	
@@ -145,7 +149,10 @@ class AlarmsController extends AppController {
 		}
 		$events = $this->Alarm->Event->find('list');
 		$this->set(compact('events'));
-		$sounds = $this->Alarm->Sound->find('list');
+		$states = $this->Alarm->State->find('list',array('fields' => array('id','estado')));
+		$this->set(compact('states'));
+		$sounds = $this->Alarm->Sound->find('list',array('fields' => array('id','nombre_sonido')));
 		$this->set(compact('sounds'));
+
 	}
 }

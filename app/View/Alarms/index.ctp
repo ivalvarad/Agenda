@@ -16,7 +16,7 @@
 			<?php foreach ($alarms as $alarm): ?>
 				<tr>
 					<td><?php echo h($alarm['Alarm']['id']); ?>&nbsp;</td>
-					<td><?php echo h($alarm['Alarm']['state']); ?>&nbsp;</td>
+					<td><?php echo h($alarm['Alarm']['state_id']); ?>&nbsp;</td>
 					<td><?php echo h($alarm['Alarm']['date']); ?>&nbsp;</td>
 					<td><?php echo h($alarm['Alarm']['sound_id']); ?>&nbsp;</td>
 					<td>
@@ -85,3 +85,26 @@
 			</div>
 
 		</div>
+		
+		
+							<?php
+				if($this->Time->isThisWeek( $alarm['Alarm']['date'], null)&& $alarm['Alarm']['state_id']==1){
+						?>
+						
+							
+							
+							<div class="alert alert-info fade in">
+								<a href="#" class="close" data-dismiss="alert">&times;</a>
+								<audio src="/Agendaapp/files/<?php echo ($alarm['Alarm']['sound_id']); ?>.mp3" controls autoplay ="true" hidden > </audio>
+								</p>
+								<strong>¡Atención!</strong> Tienes una tarea esta semana.
+							</div>
+							
+							
+						<?php	
+						}else{
+						?>
+							
+						<?php		
+						}
+						?>
