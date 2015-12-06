@@ -16,6 +16,7 @@ class EventsController extends AppController {
  * @var array
  */
 	public $components = array('Paginator', 'Flash', 'Session');
+	var $uses = array('Event','Category', 'Priority', 'User');
 
 /**
  * index method
@@ -48,6 +49,9 @@ class EventsController extends AppController {
  * @return void
  */
 	public function add() {
+		$this->set('usuario', $this->User->findByUsername($_SESSION['usernm']));
+		$this->set('priorities', $this->Priority->find('list'));
+		$this->set('categories', $this->Category->find('list'));
 		if ($this->request->is('post')) {
 			$this->Event->create();
 			if ($this->Event->save($this->request->data)) {

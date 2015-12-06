@@ -7,10 +7,11 @@
 		echo $this->Form->input('startdate');
 		echo $this->Form->input('enddate');
 		echo $this->Form->input('description');
-		echo $this->Form->input('state');
-		echo $this->Form->input('user_id');
-		echo $this->Form->input('category_id');
-		echo $this->Form->input('priority_id');
+		$estados = array('Activo' => 'Activo', 'Pausado' => 'Pausado');
+		echo $this->Form->input('state', array('type' => 'select', 'options' => $estados));
+		echo $this->Form->input('user_id', array('type' => 'hidden', 'value' => $usuario['User']['id']));
+		echo $this->Form->input('category_id', array('type' => 'select', 'options' => $categories, 'label' => 'Categoría:'));
+		echo $this->Form->input('priority_id', array('type' => 'select', 'options' => $priorities, 'label' => 'Prioridad:'));
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
