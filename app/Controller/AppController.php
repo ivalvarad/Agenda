@@ -36,12 +36,12 @@ class AppController extends Controller {
         'Flash',
         'Auth' => array(
             'loginRedirect' => array(
-                'controller' => 'posts',
+                'controller' => 'events',
                 'action' => 'index'
             ),
             'logoutRedirect' => array(
-                'controller' => 'pages',
-                'action' => 'display',
+                'controller' => 'users',
+                'action' => 'login',
                 'home'
             ),
             'authenticate' => array(
