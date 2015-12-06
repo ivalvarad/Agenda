@@ -1,9 +1,6 @@
+<br><br><br><br><br><br><br>
 <div class="events index">
-	<h2><?php echo __('Events'); ?></h2>
-	
-	
-	
-	
+
 	<h2><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> &nbsp; Agenda</h2>
 	<table class="table" cellpadding="0" cellspacing="0" border="1">
 	<thead>
@@ -74,21 +71,7 @@
 	</nav>
 	</div>
 </div>
-<div class="actions">
-	<div class="panel panel-default" style="width: 30%;">
-		<div class="panel-heading">
-			<h3>Otras acciones</h3>
-		</div>
-		<div class="panel-body">
-			<ul>
-				<li><?php echo $this->Html->link(__('New Event'), array('action' => 'add')); ?></li>
-			</ul>
-			<ul>
-				<li><?php echo $this->Html->link(__(''), array('action' => 'add')); ?></li>
-			</ul>
-		</div>
-	</div>
-</div>
+
 
 
 

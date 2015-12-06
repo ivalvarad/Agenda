@@ -32,6 +32,9 @@
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
+			  <li role="presentation"><?php echo $this->Html->link(__('+ Tarea'), array('controller' => 'events', 'action' => 'add')); ?></li>
+			   <li role="presentation"><?php echo $this->Html->link(__('+ Categoría'), array('controller' => 'categories', 'action' => 'add')); ?></li>
+			 
             <li role="presentation" class="active"><a href="#">Mis Tareas</a></li>
             <li role="presentation"><a href="#">Mis Categorías</a></li>
             <li role="presentation"><?php echo $this->Html->link(__('Fechas más próximas'), array('controller' => 'alarms', 'action' => 'index')); ?></li>
