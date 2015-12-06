@@ -16,7 +16,8 @@ class UsersController extends AppController {
  * @var array
  */
 	public $components = array('Paginator', 'Flash', 'Session');
-
+	public $helpers = array('Html', 'Form');
+	
 	public function beforeFilter() {
 		parent::beforeFilter();
 		// Allow users to register and logout.
@@ -119,17 +120,26 @@ class UsersController extends AppController {
     }
 
     public function add() {
-        if ($this->request->is('post')) {
-            $this->User->create();
-            if ($this->User->save($this->request->data)) {
-                $this->Flash->success(__('The user has been saved'));
-                return $this->redirect(array('action' => 'index'));
-            }
-            $this->Flash->error(
-                __('The user could not be saved. Please, try again.')
-            );
-        }
-    }
+		if ($this->request->is('post')) {
+			$this->User->create();
+			if ($this->User->save($this->request->data)) {
+				if($this->request->data['User']['archivo']['error'] == 0 &&  $this->request->data['User']['archivo']['size'] > 0){
+					  //debug($this->request->data['User']);
+					  $destino = WWW_ROOT.'img'.DS;
+					  move_uploaded_file($this->request->data['User']['archivo']['tmp_name'], $destino.$this->request->data['User']['archivo']['name']);
+					  $id = $this->request->data['User']['id'];
+					  $this->User->read(null, $id);
+					  $this->User->set('picture', $this->request->data['User']['archivo']['name']);
+					  $this->User->save();
+				}
+				$this->Flash->success(__('The user has been saved'));
+				return $this->redirect(array('action' => 'index'));
+			}
+			$this->Flash->error(
+				__('The user could not be saved. Please, try again.')
+			);
+		}
+	}
 
     public function edit($id = null) {
         $this->User->id = $id;
