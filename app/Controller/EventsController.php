@@ -38,6 +38,9 @@ class EventsController extends AppController {
  * @return void
  */
 	public function view($id = null) {
+		$this->set('usuario', $this->User->findByUsername($_SESSION['usernm']));
+		$this->set('priorities', $this->Priority->find('list'));
+		$this->set('categories', $this->Category->find('list'));
 		if (!$this->Event->exists($id)) {
 			throw new NotFoundException(__('Invalid event'));
 		}
@@ -73,6 +76,9 @@ class EventsController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+		$this->set('usuario', $this->User->findByUsername($_SESSION['usernm']));
+		$this->set('priorities', $this->Priority->find('list'));
+		$this->set('categories', $this->Category->find('list'));
 		if (!$this->Event->exists($id)) {
 			throw new NotFoundException(__('Invalid event'));
 		}
