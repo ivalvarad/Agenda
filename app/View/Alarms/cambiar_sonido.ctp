@@ -36,12 +36,12 @@
 
 							<div class="btn-group" role="group">
 								<button type="button" class="btn btn-default">
-									<?php echo $this->Html->link(__('Cambiar sonido'), array('action' => 'cambio', $alarm['Alarm']['id'])); ?>
+									<?php echo $this->Html->link(__('Editar'), array('action' => 'cambio', $alarm['Alarm']['id'])); ?>
 								</button>
 							</div>
 							<div class="btn-group" role="group">
 								<button type="button" class="btn btn-default">
-									<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $alarm['Alarm']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $alarm['Alarm']['id'] ))); ?>
+									<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $alarm['Alarm']['id']), array('confirm' => __('Está segur@ de que desea eliminar la alarma?'))); ?>
 								</button>
 							</div>
 						</div>			
