@@ -1,29 +1,25 @@
+<br><br><br><br><br><br><br>
 <div class="categories view">
-<h2><?php echo __('Category'); ?></h2>
+<h2><?php echo __('Categoría'); ?></h2>
 	<dl>
-		<dt><?php echo __('Id'); ?></dt>
-		<dd>
-			<?php echo h($category['Category']['id']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Description'); ?></dt>
-		<dd>
-			<?php echo h($category['Category']['description']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Name'); ?></dt>
+		<dt><?php echo __('Nombre'); ?></dt>
 		<dd>
 			<?php echo h($category['Category']['name']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Descripción'); ?></dt>
+		<dd>
+			<?php echo h($category['Category']['description']); ?>
 			&nbsp;
 		</dd>
 	</dl>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
+	<h3><?php echo __('Acciones'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit Category'), array('action' => 'edit', $category['Category']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Category'), array('action' => 'delete', $category['Category']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $category['Category']['id']))); ?> </li>
-		<li><?php echo $this->Html->link(__('List Categories'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Category'), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('Editar Categoría'), array('action' => 'edit', $category['Category']['id'])); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Eliminar Categoría'), array('action' => 'delete', $category['Category']['id']), array('confirm' => __('Está segur@ de que desea eliminar la categoría?'))); ?> </li>
+		<li><?php echo $this->Html->link(__('Listar Categorías'), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('Crear Categoría'), array('action' => 'add')); ?> </li>
 	</ul>
 </div>
