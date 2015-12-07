@@ -1,6 +1,5 @@
 <div class="alarms index">
 	<h2><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> &nbsp; Alarmas</h2>
-	<h2><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> &nbsp; Alarmas</h2>
 	<table class="table" cellpadding="0" cellspacing="0" border="1">
 		<thead>
 			<tr>
@@ -85,23 +84,66 @@
 			</div>
 
 		</div>
-		
-		
+		<?php foreach ($alarms as $alarm): ?>
 						<?php
-						if($this->Time->isThisWeek( $alarm['Alarm']['date'], null)&& $alarm['Alarm']['state']=="Activo"){
+						if($this->Time->isToday( $alarm['Alarm']['date'], null)&& $alarm['Alarm']['state']=="Activo"){
 						?>
+						
+							
+							
+							<div class="alert alert-success fade in">
+								<a href="#" class="close" data-dismiss="alert">&times;</a>
+								<audio src="/Agendaapp/files/2.mp3" controls autoplay ="true" hidden > </audio>
+								</p>
+								<strong>¡Atención!</strong> El evento
+								<?php echo $this->Html->link($alarm['Event']['id'], array('controller' => 'events', 'action' => 'view', $alarm['Event']['id'])); ?>
+							
+								es hoy.
+							</div>
+							
+							
+						<?php	
+						}else if($this->Time->isTomorrow( $alarm['Alarm']['date'], null)&& $alarm['Alarm']['state']=="Activo"){
+						?>
+							<div class="alert alert-danger fade in">
+								<a href="#" class="close" data-dismiss="alert">&times;</a>
+								<audio src="/Agendaapp/files/9.mp3" controls autoplay ="true" hidden > </audio>
+								</p>
+								<strong>¡Atención!</strong> El evento
+								<?php echo $this->Html->link($alarm['Event']['id'], array('controller' => 'events', 'action' => 'view', $alarm['Event']['id'])); ?>
 
+								es mañana.
+							</div>
+						<?php		
+						} else {
+						?>
 							<div class="alert alert-info fade in">
 								<a href="#" class="close" data-dismiss="alert">&times;</a>
-								<audio src="/Agendaapp/files/<?php echo ($alarm['Alarm']['sound_id']); ?>.mp3" controls autoplay ="true" hidden > </audio>
+								<audio src="/Agendaapp/files/8.mp3" controls autoplay ="true" hidden > </audio>
 								</p>
-								<strong>¡Atención!</strong> Tienes una tarea esta semana.
-							</div>
+								<strong>¡Informo!</strong> Es recomendable preparar el evento
+								<?php echo $this->Html->link($alarm['Event']['id'], array('controller' => 'events', 'action' => 'view', $alarm['Event']['id'])); ?>
 
-						<?php	
-						}else{
-						?>
-							
-						<?php		
+								.
+							</div>
+						
+						
+						<?php
 						}
 						?>
+		<?php endforeach; ?>							
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

@@ -8,9 +8,9 @@
 			 echo $this->Form->input('id');
 			 $estados = array('Activo' => 'Activo', 'Pausado' => 'Pausado');
 			 echo $this->Form->input('state', array('type' => 'select', 'options' => $estados, 'label'=>'Estado'));
-			 echo $this->Form->input('date', array('label' => 'Fecha'));
+			  $this->Form->input('date', array('label' => 'Fecha'));
 			 echo $this->Form->input('sound_id', array('label' => 'Sonido'));
-			 echo $this->Form->input('event_id', array('label' => 'Evento'));
+			  $this->Form->input('event_id', array('label' => 'Evento'));
 		?>
 
 	</fieldset>
