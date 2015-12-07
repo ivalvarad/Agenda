@@ -15,10 +15,14 @@
 	  <ul class="nav navbar-nav">
 		<li class="active"><?php echo $this->Html->link(__('Mi agenda', true), array('controller'=>'events','action' => 'index')); ?></li>
 		<!-- <li class="active"><a href="#">Home</a></li> -->
+		<li class="active"><?php echo $this->Html->link(__('Mis alarmas', true), array('controller'=>'alarms','action' => 'index')); ?></li>
+		<!-- <li class="active"><a href="#">Home</a></li> -->
 		<li class="active"><?php echo $this->Html->link(__('Mis categorías', true), array('controller'=>'categories','action' => 'index')); ?></li>
 		<!-- <li class="active"><a href="#">Home</a></li> -->
 		<li class="active"><?php echo $this->Html->link(__('Mis prioridades', true), array('controller'=>'priorities','action' => 'index')); ?></li>
 		<!-- <li class="active"><a href="#">Home</a></li> -->
+		<li><?php echo $this->Html->link(__('Mi perfil', true), array('controller'=>'users','action' => 'index')); ?></li>
+		<!-- <li><a href="#about">Mi perfil</a></li> -->
 		<li class="dropdown">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones <span class="caret"></span></a>
 		  <ul class="dropdown-menu">
@@ -26,8 +30,6 @@
 			<li> <?php echo $this->Html->link('Opciones de alarma',array('controller' => 'alarms','action' => 'cambiar_sonido')) ?> </li>
 		  </ul>
 		</li>
-		<li><?php echo $this->Html->link(__('Mi perfil', true), array('controller'=>'users','action' => 'index')); ?></li>
-		<!-- <li><a href="#about">Mi perfil</a></li> -->
 		<?php
 			if ($_SESSION['usernm'] !== null){ 
 			?>

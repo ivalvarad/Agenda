@@ -68,9 +68,8 @@ class AlarmsController extends AppController {
 		$this->set(compact('events'));
 		$sounds = $this->Alarm->Sound->find('list',array('fields' => array('id','nombre_sonido')));
 		$this->set(compact('sounds'));
-		$states = $this->Alarm->State->find('list',array('fields' => array('id','estado')));
-		$this->set(compact('states'));
-		
+		//$states = $this->Alarm->State->find('list',array('fields' => array('id','estado')));
+		//$this->set(compact('states'));
 	}
 
 /**
@@ -97,8 +96,8 @@ class AlarmsController extends AppController {
 		}
 		$events = $this->Alarm->Event->find('list');
 		$this->set(compact('events'));
-		$sounds = $this->Alarm->Sound->find('list');
-		$this->set(compact('sounds'));
+		//$sounds = $this->Alarm->Sound->find('list');
+		//$this->set(compact('sounds'));
 	}
 
 /**

@@ -37,16 +37,6 @@ class Alarm extends AppModel {
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
-		),
-		'State' => array(
-			'className' => 'State',
-			'foreignKey' => 'state_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
 		)
 	);
-	
-	
-
 }
