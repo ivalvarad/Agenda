@@ -37,7 +37,7 @@
 	<h3><?php echo __('Acciones'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('Editar Evento'), array('action' => 'edit', $event['Event']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Eliminar Evento'), array('action' => 'delete', $event['Event']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $event['Event']['id']))); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Eliminar Evento'), array('action' => 'delete', $event['Event']['id']), array('confirm' => __('Está segur@ de que desea eliminar el evento?'))); ?> </li>
 		<li><?php echo $this->Html->link(__('Listar Eventos'), array('action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('Crear Evento'), array('action' => 'add')); ?> </li>
 	</ul>
