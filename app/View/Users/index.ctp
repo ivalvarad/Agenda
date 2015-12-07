@@ -1,5 +1,4 @@
 <div class="users index">
-	<h2><?php echo __('Usuarios'); ?></h2>
 	<h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> &nbsp; Mi usuario</h2>
 	<table class="table" cellpadding="0" cellspacing="0" border="1">
 		<thead>

@@ -1,4 +1,4 @@
-<br><br><br><br><br><br><br>
+
 <div class="events index">
 
 	<h2><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> &nbsp; Agenda</h2>
@@ -24,20 +24,24 @@
 		<td><?php echo h($event['Category']['name']); ?>&nbsp;</td>
 		<td><?php echo h($event['Priority']['name']); ?>&nbsp;</td>
 		<td class="actions" style="text-align: center;">
+
 			<div class="btn-group" role="group" aria-label="...">
 				<div class="btn-group" role="group">
 					<button type="button" class="btn btn-default">
-						<?php echo $this->Html->link(__('Expandir'), array('action' => 'view', $event['Event']['id'])); ?>
+					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+						<?php echo $this->Html->link(__(''), array('action' => 'view', $event['Event']['id'])); ?>
 					</button>
 				</div>
 				<div class="btn-group" role="group">
 					<button type="button" class="btn btn-default">
-						<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $event['Event']['id'])); ?>
+					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+						<?php echo $this->Html->link(__(''), array('action' => 'edit', $event['Event']['id'])); ?>
 					</button>
 				</div>
 				<div class="btn-group" role="group">
 					<button type="button" class="btn btn-default">
-						<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $event['Event']['id']), array('confirm' => __('Está segur@ de que desea eliminar el evento?'))); ?>
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+						<?php echo $this->Form->postLink(__(''), array('action' => 'delete', $event['Event']['id']), array('confirm' => __('Está segur@ de que desea eliminar el evento?'))); ?>
 					</button>
 				</div>
 			</div>	
@@ -70,10 +74,7 @@
 	</div>
 </div>
 <div class="actions">
-	<h3><?php echo __('Acciones'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Crear Evento'), array('action' => 'add')); ?> </li>
-	</ul>
+	<h4><span class="glyphicon glyphicon-check" aria-hidden="true"></span> &nbsp;<?php echo $this->Html->link(__('Crear Evento'), array('action' => 'add')); ?></h4>
 </div>
 
 
