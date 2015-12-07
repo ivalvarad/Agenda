@@ -5,11 +5,9 @@
 	<table class="table" cellpadding="0" cellspacing="0" border="1">
 		<thead>
 			<tr>
-				<th style="text-align: center;"><?php echo $this->Paginator->sort('id'); ?></th>
-				<th style="text-align: center;"><?php echo $this->Paginator->sort('state_id'); ?></th>
-				<th style="text-align: center;"><?php echo $this->Paginator->sort('date'); ?></th>
-				
-				<th style="text-align: center;"><?php echo $this->Paginator->sort('event_id'); ?></th>
+				<th style="text-align: center;"><?php echo $this->Paginator->sort('Estado'); ?></th>
+				<th style="text-align: center;"><?php echo $this->Paginator->sort('Fecha'); ?></th>
+				<th style="text-align: center;"><?php echo $this->Paginator->sort('Evento'); ?></th>
 				
 				
 				
@@ -20,22 +18,7 @@
 		<tbody>
 			<?php foreach ($alarms as $alarm): ?>
 				<tr>
-					<td><?php echo h($alarm['Alarm']['id']); ?>&nbsp;</td>
-
-					<td>
-
-						<?php foreach ($states as $state):
-						echo "F";
-						if($state['State']['id']==$alarm['Alarm']['state_id']){
-							echo $state['State']['state'];
-						}else{
-							
-						}
-						 endforeach; ?>
-						 &nbsp; 
-					
-					
-					</td>
+					<td><?php echo h($alarm['Alarm']['state']); ?>&nbsp;</td>
 
 					<td><?php echo h($alarm['Alarm']['date']); ?>&nbsp;</td>
 					
@@ -68,10 +51,10 @@
 		</tbody>
 	</table>
 	<p style="text-align: center;">
-		<?php
+		<?php /*
 		echo $this->Paginator->counter(array(
 			'format' => __('Página {:page} de {:pages}, mostrando {:current} usuarios de {:count} en total, empezando en {:start} y terminando en {:end}')
-			));
+			)); */
 			?>	</p>
 			<div class="paging">
 				<div class="paging" style="text-align: center;">
@@ -79,12 +62,12 @@
 						<ul class="pager">
 							<li>
 								<?php 
-								echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
+								echo $this->Paginator->prev('< ' . __('anterior'), array(), null, array('class' => 'prev disabled'));
 								?>
 							</li>
 							<li>
 								<?php 
-								echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
+								echo $this->Paginator->next(__('siguiente') . ' >', array(), null, array('class' => 'next disabled'));
 								?>
 							</li>
 						</ul>
@@ -99,8 +82,8 @@
 				</div>
 				<div class="panel-body">
 					<ul>
-						<li><?php echo $this->Html->link(__('Agregar Alarma'), array('action' => 'add')); ?></li>
-						<li><?php echo $this->Html->link(__('Pr'), array('controller' => 'events', 'action' => 'add')); ?> </li>
+						<li><?php echo $this->Html->link(__('Crear Alarma'), array('action' => 'add')); ?></li>
+						<li><?php echo $this->Html->link(__('Crear evento'), array('controller' => 'events', 'action' => 'add')); ?> </li>
 					</ul>
 				</div>
 			</div>
