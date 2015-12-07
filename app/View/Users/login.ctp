@@ -12,4 +12,7 @@
     ?>
     </fieldset>
 <?php echo $this->Form->end(__('Ingresar')); ?>
+
+<?php echo $this->Html->link(__('Registrarse'), array('controller' => 'users', 'action' => 'add')); ?>
+
 </div>

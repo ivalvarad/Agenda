@@ -87,20 +87,17 @@
 		</div>
 		
 		
-							<?php
-				if($this->Time->isThisWeek( $alarm['Alarm']['date'], null)&& $alarm['Alarm']['state']=="Activo"){
+						<?php
+						if($this->Time->isThisWeek( $alarm['Alarm']['date'], null)&& $alarm['Alarm']['state']=="Activo"){
 						?>
-						
-							
-							
+
 							<div class="alert alert-info fade in">
 								<a href="#" class="close" data-dismiss="alert">&times;</a>
 								<audio src="/Agendaapp/files/<?php echo ($alarm['Alarm']['sound_id']); ?>.mp3" controls autoplay ="true" hidden > </audio>
 								</p>
 								<strong>¡Atención!</strong> Tienes una tarea esta semana.
 							</div>
-							
-							
+
 						<?php	
 						}else{
 						?>
