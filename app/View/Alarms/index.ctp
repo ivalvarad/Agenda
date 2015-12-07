@@ -88,17 +88,19 @@
 						<?php
 						if($this->Time->isToday( $alarm['Alarm']['date'], null)&& $alarm['Alarm']['state']=="Activo"){
 						?>
-						
-							
+
 							
 							<div class="alert alert-success fade in">
-								<a href="#" class="close" data-dismiss="alert">&times;</a>
-								<audio src="/Agendaapp/files/2.mp3" controls autoplay ="true" hidden > </audio>
-								</p>
-								<strong>¡Atención!</strong> El evento
-								<?php echo $this->Html->link($alarm['Event']['id'], array('controller' => 'events', 'action' => 'view', $alarm['Event']['id'])); ?>
 							
-								es hoy.
+								<a href="#" class="close" data-dismiss="alert">&times;</a>
+								<audio src="<?php echo $this->webroot; ?>files/2.mp3" controls autoplay ="true" hidden > </audio>
+								</p>
+								<strong>¡Atención!</strong> El evento: "
+								
+								<?php echo $this->Html->link($alarm['Event']['description'], array('controller' => 'events', 'action' => 'view', $alarm['Event']['id'])); ?>
+						
+								
+								" es hoy.
 							</div>
 							
 							
@@ -107,24 +109,24 @@
 						?>
 							<div class="alert alert-danger fade in">
 								<a href="#" class="close" data-dismiss="alert">&times;</a>
-								<audio src="/Agendaapp/files/9.mp3" controls autoplay ="true" hidden > </audio>
+								<audio src="<?php echo $this->webroot; ?>files/9.mp3" controls autoplay ="true" hidden > </audio>
 								</p>
-								<strong>¡Atención!</strong> El evento
-								<?php echo $this->Html->link($alarm['Event']['id'], array('controller' => 'events', 'action' => 'view', $alarm['Event']['id'])); ?>
-
-								es mañana.
+								<strong>¡Atención!</strong> El evento "
+								<?php echo $this->Html->link($alarm['Event']['description'], array('controller' => 'events', 'action' => 'view', $alarm['Event']['id'])); ?>
+						
+								 " es mañana.
 							</div>
 						<?php		
 						} else {
 						?>
 							<div class="alert alert-info fade in">
 								<a href="#" class="close" data-dismiss="alert">&times;</a>
-								<audio src="/Agendaapp/files/8.mp3" controls autoplay ="true" hidden > </audio>
+								<audio src="<?php echo $this->webroot; ?>files/8.mp3" controls autoplay ="true" hidden > </audio>
 								</p>
-								<strong>¡Informo!</strong> Es recomendable preparar el evento
-								<?php echo $this->Html->link($alarm['Event']['id'], array('controller' => 'events', 'action' => 'view', $alarm['Event']['id'])); ?>
-
-								.
+								<strong>¡Informo!</strong> Es recomendable preparar el evento "
+								<?php echo $this->Html->link($alarm['Event']['description'], array('controller' => 'events', 'action' => 'view', $alarm['Event']['id'])); ?>
+						
+								 ".
 							</div>
 						
 						
