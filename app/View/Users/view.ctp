@@ -1,5 +1,5 @@
 <div class="users view">
-<h2><?php echo __('Usuario'); ?></h2>
+<h2><?php echo __('Mi usuario'); ?></h2>
 
 <div class="container">
 	<div class="row">
@@ -39,7 +39,7 @@
 				</tbody>
 			  </table>
 				<a><?php echo $this->Html->link(__('Editar mi usuario'), array('action' => 'edit', $user['User']['id']), array('class' => 'btn btn-primary')); ?> </a>
-				<a><?php echo $this->Form->postLink(__('Eliminar mi usuario'), array('action' => 'delete', $user['User']['id']), array('class' => 'btn btn-primary'), array('confirm' => __('Are you sure you want to delete # %s?', $user['User']['id']))); ?> </a>
+				<a><?php echo $this->Form->postLink(__('Eliminar mi usuario'), array('action' => 'delete', $user['User']['id']), array('class' => 'btn btn-primary'), array('confirm' => __('Está segur@ de que desea eliminar su usuario?'))); ?> </a>
 			</div>
               </div>
             </div>
