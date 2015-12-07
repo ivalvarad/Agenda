@@ -1,18 +1,13 @@
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<br><br><br><br><br><br><br>
 <div class="alarms form">
 <?php echo $this->Form->create('Alarm'); ?>
 	<fieldset>
 		<legend><?php echo __('Edit Alarm'); ?></legend>
 	<?php
 		 echo $this->Form->input('id');
-		 echo $this->Form->input('state_id');
+		 $estados = array('Activo' => 'Activo', 'Pausado' => 'Pausado');
+			echo $this->Form->input('state', array('type' => 'select', 'options' => $estados, 'label'=>'Estado'));
 		$this->Form->input('date');
 		echo $this->Form->input('sound_id');
 		 $this->Form->input('event_id');

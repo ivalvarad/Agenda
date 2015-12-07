@@ -6,7 +6,7 @@
 		<thead>
 			<tr>
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('id'); ?></th>
-				<th style="text-align: center;"><?php echo $this->Paginator->sort('state_id'); ?></th>
+				<th style="text-align: center;"><?php echo $this->Paginator->sort('state'); ?></th>
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('date'); ?></th>
 				
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('event_id'); ?></th>
@@ -22,20 +22,11 @@
 				<tr>
 					<td><?php echo h($alarm['Alarm']['id']); ?>&nbsp;</td>
 
-					<td>
-
-						<?php foreach ($states as $state):
-						echo "F";
-						if($state['State']['id']==$alarm['Alarm']['state_id']){
-							echo $state['State']['state'];
-						}else{
-							
-						}
-						 endforeach; ?>
-						 &nbsp; 
+		
+					<td><?php echo h($alarm['Alarm']['state']); ?>&nbsp;</td> 
 					
 					
-					</td>
+				
 
 					<td><?php echo h($alarm['Alarm']['date']); ?>&nbsp;</td>
 					
