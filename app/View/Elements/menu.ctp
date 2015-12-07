@@ -16,7 +16,7 @@
 					<ul class="nav navbar-nav">
 						<li class="active"><?php echo $this->Html->link(__('Mi agenda', true), array('controller'=>'events','action' => 'index')); ?></li>
 						<!-- <li class="active"><a href="#">Home</a></li> -->
-						<li class="active"><?php echo $this->Html->link(__('Alarmas', true), array('controller'=>'events','action' => 'alarm')); ?></li>
+						<li class="active"><?php echo $this->Html->link(__('Alarmas', true), array('controller'=>'alarms','action' => 'index')); ?></li>
 						<!-- <li class="active"><a href="#">Home</a></li> -->
 						<li class="active"><?php echo $this->Html->link(__('Categorías', true), array('controller'=>'categories','action' => 'index')); ?></li>
 						<!-- <li class="active"><a href="#">Home</a></li> -->
