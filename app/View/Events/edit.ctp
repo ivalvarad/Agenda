@@ -19,7 +19,7 @@
 					echo $this->Form->input('user_id', array('type' => 'hidden', 'value' => $usuario['User']['id']));
 					?>
 				</fieldset>
-				<?php echo $this->Form->end(__('Guardar')); ?>
+				<?php echo $this->Form->end(array('label' => 'Guardar', 'class' =>'btn btn-info')); ?>
 				<br/>
 			</div>
 			<div align="left" class="col-sm-3">

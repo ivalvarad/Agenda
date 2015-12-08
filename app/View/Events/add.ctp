@@ -8,7 +8,7 @@
 				<br/>
 				<?php echo $this->Form->create('Event'); ?>
 	<fieldset>
-		<legend><?php echo __('Crear Evento'); ?></legend>
+		
 	<?php
 		echo $this->Form->input('startdate', array('label'=>'Fecha inicial &nbsp;&nbsp;'));
 		echo $this->Form->input('enddate', array('label'=>'Fecha final &nbsp;&nbsp;'));
@@ -21,7 +21,7 @@
 
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Guardar')); ?>
+<?php echo $this->Form->end(array('label' => 'Guardar', 'class' =>'btn btn-info')); ?>
 				<br/>
 			</div>
 			<div align="left" class="col-sm-3">

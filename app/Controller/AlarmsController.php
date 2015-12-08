@@ -33,7 +33,7 @@ class AlarmsController extends AppController {
 	public function index() {
 		$this->Alarm->recursive = 0;
 		$this->set('alarms', $this->Paginator->paginate());
-		$events = $this->Alarm->Event->find('list',array('fields' => array('id','description')));
+		$events = $this->Alarm->Event->find('list',array('fields' => array('id','descripcion')));
 		$this->set(compact('events'));
 		$this->set('users', $this->User->find('all'));
 		$this->set('evts', $this->Event->find('all'));
