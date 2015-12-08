@@ -29,12 +29,25 @@ class EventsController extends AppController {
 		$this->Event->recursive = 0;
 		$this->set('events', $this->Paginator->paginate());
 	}
-	public function alarm() {
-		$this->set('priority', $this->Event->Priority->find('first'));
-		$this->set('category', $this->Event->Category->find('first'));
-		$this->Event->recursive = 0;
-		$this->set('events', $this->Paginator->paginate());
-	}
+
+	public function filtro_prioridad_alta() {
+  $prioritiesAlta = $this->Event->find('all', array(
+   'conditions' => array('Event.priority_id' => 1), 
+   ));
+  $this->set('prioritiesAlta', $prioritiesAlta);  
+ }
+ 	public function filtro_prioridad_media() {
+  $prioritiesMedia = $this->Event->find('all', array(
+   'conditions' => array('Event.priority_id' => 1), 
+   ));
+  $this->set('prioritiesMedia', $prioritiesMedia);  
+ }
+ 	public function filtro_prioridad_baja() {
+  $prioritiesBaja = $this->Event->find('all', array(
+   'conditions' => array('Event.priority_id' => 1), 
+   ));
+  $this->set('prioritiesBaja', $prioritiesBaja);  
+ }
 
 /**
  * view method
