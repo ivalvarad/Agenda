@@ -11,10 +11,10 @@
 		</div>
         <div class="container panel-body">
 			<?php 
-				if($user['User']['picture'] !== null){
+				if($user['User']['picture'] != null){
 			?>
 			<div class="row">
-				<div class="col-md-3 col-lg-3 " align="center"> <?php echo $this->Html->image($user['User']['picture'], array('class'=> "img-circle img-responsive"));?> </div>
+				<div class="col-md-3 col-lg-3 " align="center"> <?php echo $this->Html->image($user['User']['picture'], array('class'=> 'img-circle img-responsive'));?> </div>
 			</div>
 			<?php 
 				}
