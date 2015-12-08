@@ -16,6 +16,7 @@
 					echo $this->Form->input('state', array('type' => 'select', 'options' => $estados, 'label'=>'Estado &nbsp;&nbsp;'));
 					echo $this->Form->input('category_id', array('type' => 'select', 'options' => $categories, 'label' => 'Categoría &nbsp;&nbsp;'));
 					echo $this->Form->input('priority_id', array('type' => 'select', 'options' => $priorities, 'label' => 'Prioridad &nbsp;&nbsp;'));
+					echo $this->Form->input('user_id', array('type' => 'hidden', 'value' => $usuario['User']['id']));
 					?>
 				</fieldset>
 				<?php echo $this->Form->end(__('Guardar')); ?>
