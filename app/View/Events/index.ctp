@@ -29,19 +29,19 @@
 				<div class="btn-group" role="group">
 					<button type="button" class="btn btn-default">
 					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-						<?php echo $this->Html->link(__(''), array('action' => 'view', $event['Event']['id'])); ?>
+						<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $event['Event']['id'])); ?>
 					</button>
 				</div>
 				<div class="btn-group" role="group">
 					<button type="button" class="btn btn-default">
 					<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-						<?php echo $this->Html->link(__(''), array('action' => 'edit', $event['Event']['id'])); ?>
+						<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $event['Event']['id'])); ?>
 					</button>
 				</div>
 				<div class="btn-group" role="group">
 					<button type="button" class="btn btn-default">
 					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-						<?php echo $this->Form->postLink(__(''), array('action' => 'delete', $event['Event']['id']), array('confirm' => __('Está segur@ de que desea eliminar el evento?'))); ?>
+						<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $event['Event']['id']), array('confirm' => __('Está segur@ de que desea eliminar el evento?'))); ?>
 					</button>
 				</div>
 			</div>	
