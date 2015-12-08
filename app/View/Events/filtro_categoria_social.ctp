@@ -36,6 +36,7 @@
 					<td><?php echo h($event['Event']['description']); ?>&nbsp;</td>
 					<td><?php echo h($event['Event']['state']); ?>&nbsp;</td>
 					<td><?php echo h($event['Category']['name']); ?>&nbsp;</td>
+					<td><?php echo h($event['Category']['name']); ?>&nbsp;</td>
 					<td class="actions" style="text-align: center;">
 
 						<div class="btn-group" role="group" aria-label="...">
