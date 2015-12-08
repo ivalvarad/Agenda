@@ -1,5 +1,11 @@
 <div class="alarms index">
 	<h2><span class="glyphicon glyphicon-bell" aria-hidden="true"></span> &nbsp; Alarmas</h2>
+	<br/>
+	<div class="actions">
+		<h5><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &nbsp;<?php echo $this->Html->link(__('Agregar Alarma'), array('action' => 'add')); ?></h5>
+		<h5><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> &nbsp;<?php echo $this->Html->link(__('Nuevo Evento'), array('controller' => 'events', 'action' => 'add')); ?></h5>
+		<h5><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span> &nbsp;<?php echo $this->Html->link(__('Lista de Eventos'), array('controller' => 'events', 'action' => 'index')); ?></h5>
+	</div>
 	<table class="table" cellpadding="0" cellspacing="0" border="1">
 
 		<tbody>
@@ -56,23 +62,6 @@
 			
 		</tbody>
 	</table>
-
-		</div>
-		<div class="actions">
-			<div class="panel panel-default" style="width: 30%;">
-				<div class="panel-heading">
-					<h3>Acciones</h3>
-				</div>
-				<div class="panel-body">
-					<ul>
-						<li><?php echo $this->Html->link(__('Agregar Alarma'), array('action' => 'add')); ?></li>
-						<li><?php echo $this->Html->link(__('Lista de Eventos'), array('controller' => 'events', 'action' => 'index')); ?> </li>
-						<li><?php echo $this->Html->link(__('Nuevo Evento'), array('controller' => 'events', 'action' => 'add')); ?> </li>
-					</ul>
-				</div>
-			</div>
-
-		</div>
 						
 
 
