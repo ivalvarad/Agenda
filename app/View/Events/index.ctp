@@ -20,6 +20,17 @@
 		</thead>
 		<tbody>
 			<?php foreach ($events as $event): ?>
+				<?php 
+					//debug($users);
+					$pe = false;
+					foreach($users as $user):
+						if ( ($user['User']['id'] === $event['Event']['user_id']) && ($user['User']['username'] === $this->Session->read('Auth.User.User.username')) ){
+							$pe = true;
+						}
+					endforeach;
+					//if($user['User']['username'] === $this->Session->read('Auth.User.User.username')) { 
+					if($pe === true){
+				?>
 				<tr>
 					<td><?php echo h($event['Event']['startdate']); ?>&nbsp;</td>
 					<td><?php echo h($event['Event']['enddate']); ?>&nbsp;</td>
@@ -51,6 +62,7 @@
 						</div>	
 					</td>
 				</tr>
+				<?php } ?>
 			<?php endforeach; ?>
 		</tbody>
 	</table>

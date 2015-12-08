@@ -28,6 +28,7 @@ class EventsController extends AppController {
 		$this->set('category', $this->Event->Category->find('first'));
 		$this->Event->recursive = 0;
 		$this->set('events', $this->Paginator->paginate());
+		$this->set('users', $this->User->find('all'));
 	}
 	public function alarm() {
 		$this->set('priority', $this->Event->Priority->find('first'));
