@@ -19,6 +19,17 @@
 		</thead>
 		<tbody>
 			<?php foreach ($categoriesTrabajo as $event): ?>
+				<?php 
+					//debug($users);
+					$pe = false;
+					foreach($users as $user):
+						if ( ($user['User']['id'] === $event['Event']['user_id']) && ($user['User']['username'] === $this->Session->read('Auth.User.User.username')) ){
+							$pe = true;
+						}
+					endforeach;
+					//if($user['User']['username'] === $this->Session->read('Auth.User.User.username')) { 
+					if($pe === true){
+				?>
 				<tr>
 					<td><?php echo h($event['Event']['startdate']); ?>&nbsp;</td>
 					<td><?php echo h($event['Event']['enddate']); ?>&nbsp;</td>
@@ -49,75 +60,10 @@
 						</div>	
 					</td>
 				</tr>
+				<?php } ?>
 			<?php endforeach; ?>
 			
 			
-			
-<?php foreach ($categoriesEstudio as $event): ?>
-				<tr>
-					<td><?php echo h($event['Event']['startdate']); ?>&nbsp;</td>
-					<td><?php echo h($event['Event']['enddate']); ?>&nbsp;</td>
-					<td><?php echo h($event['Event']['description']); ?>&nbsp;</td>
-					<td><?php echo h($event['Event']['state']); ?>&nbsp;</td>
-					<td><?php echo h($event['Category']['name']); ?>&nbsp;</td>
-					<td class="actions" style="text-align: center;">
-
-						<div class="btn-group" role="group" aria-label="...">
-							<div class="btn-group" role="group">
-								<button type="button" class="btn btn-default">
-									<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-									<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $event['Event']['id'])); ?>
-								</button>
-							</div>
-							<div class="btn-group" role="group">
-								<button type="button" class="btn btn-default">
-									<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-									<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $event['Event']['id'])); ?>
-								</button>
-							</div>
-							<div class="btn-group" role="group">
-								<button type="button" class="btn btn-default">
-									<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-									<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $event['Event']['id']), array('confirm' => __('Está segur@ de que desea eliminar el evento?'))); ?>
-								</button>
-							</div>
-						</div>	
-					</td>
-				</tr>
-			<?php endforeach; ?>
-			
-<?php foreach ($categoriesSocial as $event): ?>
-				<tr>
-					<td><?php echo h($event['Event']['startdate']); ?>&nbsp;</td>
-					<td><?php echo h($event['Event']['enddate']); ?>&nbsp;</td>
-					<td><?php echo h($event['Event']['description']); ?>&nbsp;</td>
-					<td><?php echo h($event['Event']['state']); ?>&nbsp;</td>
-					<td><?php echo h($event['Category']['name']); ?>&nbsp;</td>
-					<td class="actions" style="text-align: center;">
-
-						<div class="btn-group" role="group" aria-label="...">
-							<div class="btn-group" role="group">
-								<button type="button" class="btn btn-default">
-									<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-									<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $event['Event']['id'])); ?>
-								</button>
-							</div>
-							<div class="btn-group" role="group">
-								<button type="button" class="btn btn-default">
-									<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-									<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $event['Event']['id'])); ?>
-								</button>
-							</div>
-							<div class="btn-group" role="group">
-								<button type="button" class="btn btn-default">
-									<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-									<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $event['Event']['id']), array('confirm' => __('Está segur@ de que desea eliminar el evento?'))); ?>
-								</button>
-							</div>
-						</div>	
-					</td>
-				</tr>
-			<?php endforeach; ?>
 		</tbody>
 	</table>
 	<p>

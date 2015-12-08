@@ -28,25 +28,32 @@ class EventsController extends AppController {
 		$this->set('category', $this->Event->Category->find('first'));
 		$this->Event->recursive = 0;
 		$this->set('events', $this->Paginator->paginate());
+		$this->set('users', $this->User->find('all'));
 	}
-	public function filtro_categoria() {
 
+	public function filtro_categoria_trabajo() {
+		$this->set('users', $this->User->find('all'));
 		$categoriesTrabajo = $this->Event->find('all', array(
 			'conditions' => array('Event.category_id' => 1), 
 			));
 		$this->set('categoriesTrabajo', $categoriesTrabajo);
 		
 		
+	}
+	public function filtro_categoria_estudio() {
+		$this->set('users', $this->User->find('all'));
 		$categoriesEstudio = $this->Event->find('all', array(
 			'conditions' => array('Event.category_id' => 2), 
 			));
 		$this->set('categoriesEstudio', $categoriesEstudio);
 		
+	}
+	public function filtro_categoria_social() {
+		$this->set('users', $this->User->find('all'));	
 		$categoriesSocial = $this->Event->find('all', array(
 			'conditions' => array('Event.category_id' => 3), 
 			));
 		$this->set('categoriesSocial', $categoriesSocial);
-		
 	}
 	public function alarm() {
 		$this->set('priority', $this->Event->Priority->find('first'));
@@ -54,6 +61,29 @@ class EventsController extends AppController {
 		$this->Event->recursive = 0;
 		$this->set('events', $this->Paginator->paginate());
 	}
+
+	public function filtro_prioridad_alta() {
+		$this->set('users', $this->User->find('all'));	
+		$prioritiesAlta = $this->Event->find('all', array(
+		'conditions' => array('Event.priority_id' => 1), 
+		));
+	  $this->set('prioritiesAlta', $prioritiesAlta);  
+	}
+ 	public function filtro_prioridad_media() {
+		$this->set('users', $this->User->find('all'));	
+		$prioritiesMedia = $this->Event->find('all', array(
+		'conditions' => array('Event.priority_id' => 2), 
+		));
+		$this->set('prioritiesMedia', $prioritiesMedia);  
+	}
+ 	public function filtro_prioridad_baja() {
+		$this->set('users', $this->User->find('all'));	
+		$prioritiesBaja = $this->Event->find('all', array(
+		'conditions' => array('Event.priority_id' => 3), 
+		));
+		$this->set('prioritiesBaja', $prioritiesBaja);  
+ }
+
 
 /**
  * view method

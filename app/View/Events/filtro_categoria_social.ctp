@@ -1,3 +1,4 @@
+
 <div class="events index">
 
 	<h2><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> &nbsp; Agenda</h2>
@@ -13,12 +14,11 @@
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('Descripción'); ?></th>
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('Estado'); ?></th>
 				<th style="text-align: center;"><?php echo $this->Paginator->sort('Categoría'); ?></th>
-				<th style="text-align: center;"><?php echo $this->Paginator->sort('Prioridad'); ?></th>
 				<th style="text-align: center;" class="actions"><?php echo __('Acciones'); ?></th>
 			</tr>
 		</thead>
 		<tbody>
-			<?php foreach ($events as $event): ?>
+			<?php foreach ($categoriesSocial as $event): ?>
 				<?php 
 					//debug($users);
 					$pe = false;
@@ -36,7 +36,6 @@
 					<td><?php echo h($event['Event']['description']); ?>&nbsp;</td>
 					<td><?php echo h($event['Event']['state']); ?>&nbsp;</td>
 					<td><?php echo h($event['Category']['name']); ?>&nbsp;</td>
-					<td><?php echo h($event['Priority']['name']); ?>&nbsp;</td>
 					<td class="actions" style="text-align: center;">
 
 						<div class="btn-group" role="group" aria-label="...">
@@ -63,6 +62,8 @@
 				</tr>
 				<?php } ?>
 			<?php endforeach; ?>
+			
+			
 		</tbody>
 	</table>
 	<p>
@@ -88,3 +89,8 @@
 			</nav>
 		</div>
 	</div>
+
+
+
+
+

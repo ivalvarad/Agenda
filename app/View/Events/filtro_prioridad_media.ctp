@@ -1,3 +1,4 @@
+
 <div class="events index">
 
 	<h2><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> &nbsp; Agenda</h2>
@@ -18,7 +19,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php foreach ($events as $event): ?>
+			<?php foreach ($prioritiesMedia as $event): ?>
 				<?php 
 					//debug($users);
 					$pe = false;
@@ -88,3 +89,8 @@
 			</nav>
 		</div>
 	</div>
+
+
+
+
+
