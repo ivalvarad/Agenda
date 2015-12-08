@@ -24,7 +24,17 @@ class PrioritiesController extends AppController {
  */
 	public function index() {
 		$this->Priority->recursive = 0;
-		$this->set('priorities', $this->Paginator->paginate());
+		#$this->set('priorities', $this->Paginator->paginate());
+
+		$prioritiesAlta = $this->Priority->find('all', array(
+			'conditions' => array('priority_id' => 1), 
+			'group' => 'priority_id'));
+		$this->set('prioritiesAlta', $prioritiesAlta);
+		$prioritiesBajita = $this->Priority->find('all', array(
+			'conditions' => array('priority_id' => 5), 
+			'group' => 'priority_id'));
+		$this->set('prioritiesBajita', $prioritiesBajita);
+
 	}
 
 /**
@@ -41,6 +51,8 @@ class PrioritiesController extends AppController {
 		$options = array('conditions' => array('Priority.' . $this->Priority->primaryKey => $id));
 		$this->set('priority', $this->Priority->find('first', $options));
 	}
+
+
 
 /**
  * add method
