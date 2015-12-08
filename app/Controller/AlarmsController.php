@@ -23,7 +23,7 @@ class AlarmsController extends AppController {
  * @var array
  */
 	public $components = array('Paginator', 'Flash', 'Session');
-	public $uses = array('Alarm', 'Event', 'Sound');
+	public $uses = array('Alarm', 'Event', 'Sound', 'User');
 
 /**
  * index method
@@ -35,6 +35,8 @@ class AlarmsController extends AppController {
 		$this->set('alarms', $this->Paginator->paginate());
 		$events = $this->Alarm->Event->find('list',array('fields' => array('id','descripcion')));
 		$this->set(compact('events'));
+		$this->set('users', $this->User->find('all'));
+		$this->set('evts', $this->Event->find('all'));
 	}
 
 /**
@@ -131,6 +133,8 @@ class AlarmsController extends AppController {
 		$this->set('alarms', $this->Paginator->paginate());
 		//$states = $this->Alarm->State->find('list',array('fields' => array('id','estado')));
 		//$this->set('states', $this->Paginator->paginate());
+		$this->set('users', $this->User->find('all'));
+		$this->set('evts', $this->Event->find('all'));
 	}
 	
 	
