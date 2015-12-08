@@ -10,9 +10,15 @@
 		  <h3 class="panel-title"> <?php echo h($user['User']['username']); ?> </h3>
 		</div>
         <div class="container panel-body">
+			<?php 
+				if($user['User']['picture'] !== null){
+			?>
 			<div class="row">
 				<div class="col-md-3 col-lg-3 " align="center"> <?php echo $this->Html->image($user['User']['picture'], array('class'=> "img-circle img-responsive"));?> </div>
 			</div>
+			<?php 
+				}
+			?>
 			<div class="col-md-9 col-lg-9 "> 
 			  <table class="table table-user-information">
 				<tbody>

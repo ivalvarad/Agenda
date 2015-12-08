@@ -10,7 +10,7 @@
 			 echo $this->Form->input('state', array('type' => 'select', 'options' => $estados, 'label'=>'Estado'));
 			 echo $this->Form->input('date', array('label' => 'Fecha'));
 			 echo $this->Form->input('sound_id', array('label' => 'Sonido'));
-			  $this->Form->input('event_id', array('label' => 'Evento'));
+			 $this->Form->input('event_id', array('label' => 'Evento'));
 		?>
 
 	</fieldset>

@@ -12,7 +12,7 @@ class Event extends AppModel {
  * @var string
  */
 	public $virtualFields = array('descripcion' => "Event.description");
-	public $displayField = 'id';
+	public $displayField = 'description';
 	
 	public $hasOne = 'Alarm';
 	
