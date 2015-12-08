@@ -9,7 +9,67 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php foreach ($categories as $category): ?>
+			<?php foreach ($categoriesTrabajo as $category): ?>
+				<tr>
+					<td><?php echo h($category['Category']['name']); ?>&nbsp;</td>
+					<td><?php echo h($category['Category']['description']); ?>&nbsp;</td>
+					<td style="text-align: center;" class="actions">
+
+						<div class="btn-group" role="group" aria-label="...">
+							<div class="btn-group" role="group">
+								<button type="button" class="btn btn-default">
+									<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+									<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $category['Category']['id'])); ?>
+								</button>
+							</div>
+							<div class="btn-group" role="group">
+								<button type="button" class="btn btn-default">
+									<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+									<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $category['Category']['id'])); ?>
+								</button>
+							</div>
+							<div class="btn-group" role="group">
+								<button type="button" class="btn btn-default">
+									<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+									<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $category['Category']['id']), array('confirm' => __('Está segur@ de que desea eliminar la categoría?'))); ?>
+								</button>
+							</div>
+						</div>
+
+					</td>
+				</tr>
+			<?php endforeach; ?>
+			<?php foreach ($categoriesEstudio as $category): ?>
+				<tr>
+					<td><?php echo h($category['Category']['name']); ?>&nbsp;</td>
+					<td><?php echo h($category['Category']['description']); ?>&nbsp;</td>
+					<td style="text-align: center;" class="actions">
+
+						<div class="btn-group" role="group" aria-label="...">
+							<div class="btn-group" role="group">
+								<button type="button" class="btn btn-default">
+									<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+									<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $category['Category']['id'])); ?>
+								</button>
+							</div>
+							<div class="btn-group" role="group">
+								<button type="button" class="btn btn-default">
+									<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+									<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $category['Category']['id'])); ?>
+								</button>
+							</div>
+							<div class="btn-group" role="group">
+								<button type="button" class="btn btn-default">
+									<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+									<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $category['Category']['id']), array('confirm' => __('Está segur@ de que desea eliminar la categoría?'))); ?>
+								</button>
+							</div>
+						</div>
+
+					</td>
+				</tr>
+			<?php endforeach; ?>
+			<?php foreach ($categoriesSocial as $category): ?>
 				<tr>
 					<td><?php echo h($category['Category']['name']); ?>&nbsp;</td>
 					<td><?php echo h($category['Category']['description']); ?>&nbsp;</td>

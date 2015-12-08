@@ -29,6 +29,25 @@ class EventsController extends AppController {
 		$this->Event->recursive = 0;
 		$this->set('events', $this->Paginator->paginate());
 	}
+	public function filtro_categoria() {
+
+		$categoriesTrabajo = $this->Event->find('all', array(
+			'conditions' => array('Event.category_id' => 1), 
+			));
+		$this->set('categoriesTrabajo', $categoriesTrabajo);
+		
+		
+		$categoriesEstudio = $this->Event->find('all', array(
+			'conditions' => array('Event.category_id' => 2), 
+			));
+		$this->set('categoriesEstudio', $categoriesEstudio);
+		
+		$categoriesSocial = $this->Event->find('all', array(
+			'conditions' => array('Event.category_id' => 3), 
+			));
+		$this->set('categoriesSocial', $categoriesSocial);
+		
+	}
 	public function alarm() {
 		$this->set('priority', $this->Event->Priority->find('first'));
 		$this->set('category', $this->Event->Category->find('first'));

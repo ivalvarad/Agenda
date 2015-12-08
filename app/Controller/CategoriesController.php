@@ -24,7 +24,22 @@ class CategoriesController extends AppController {
  */
 	public function index() {
 		$this->Category->recursive = 0;
-		$this->set('categories', $this->Paginator->paginate());
+		//$this->set('categories', $this->Paginator->paginate());
+		$categoriesTrabajo = $this->Category->find('all', array(
+			'conditions' => array('category_id' => 1), 
+			'group' => 'category_id'));
+		$this->set('categoriesTrabajo', $categoriesTrabajo);
+		
+		$categoriesEstudio = $this->Category->find('all', array(
+			'conditions' => array('category_id' => 2), 
+			'group' => 'category_id'));
+		$this->set('categoriesEstudio', $categoriesEstudio);
+		
+		$categoriesSocial = $this->Category->find('all', array(
+			'conditions' => array('category_id' => 3), 
+			'group' => 'category_id'));
+		$this->set('categoriesSocial', $categoriesSocial);
+
 	}
 
 /**
