@@ -15,8 +15,25 @@
 		</thead>
 		<tbody>
 			<?php foreach ($alarms as $alarm): ?>
+			
+					<?php 
+						//debug($users);
+						$pe = false;
+						foreach($users as $user):
+							foreach($evts as $evt):
+								if ( ($user['User']['id'] == $evt['Event']['user_id']) && 
+									 ($alarm['Alarm']['event_id'] == $evt['Event']['id']) && 
+									 ($user['User']['username'] == $this->Session->read('Auth.User.User.username'))
+								   )
+								{
+										$pe = true;
+								}
+							endforeach;
+						endforeach;
+						//if($user['User']['username'] === $this->Session->read('Auth.User.User.username')) { 
+						if($pe === true){
+					?>
 				<tr>
-
 
 					<td><?php echo h($alarm['Alarm']['state']); ?>&nbsp;</td>
 
@@ -51,6 +68,7 @@
 						</div>			
 					</td>
 				</tr>
+				<?php } ?>
 			<?php endforeach; ?>
 		</tbody>
 	</table>
