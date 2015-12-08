@@ -11,7 +11,8 @@
             </div>
 
 			<?php
-				if (isset($_SESSION['usernm'])){ 
+				//if (isset($_SESSION['usernm'])){ 
+				if($this->Session->read('Auth.User.User.username') != null){
 			?>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
@@ -33,7 +34,8 @@
 						</ul>
 					</li>
 					<?php
-					if (isset($_SESSION['usernm'])){ 
+					if($this->Session->read('Auth.User.User.username') != null){
+					//if (isset($_SESSION['usernm'])){ 
 						?>
 						<li><?php echo $this->Html->link(__('Salir de: '.$_SESSION['usernm'], true), array('controller'=>'users','action' => 'logout')); ?></li>
 						<?php }
