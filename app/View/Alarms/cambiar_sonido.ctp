@@ -38,12 +38,14 @@
 
 							<div class="btn-group" role="group">
 								<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-music" aria-hidden="true"></span>
 									<?php echo $this->Html->link(__('Cambiar sonido'), array('action' => 'cambio', $alarm['Alarm']['id'])); ?>
 								</button>
 							</div>
 							<div class="btn-group" role="group">
 								<button type="button" class="btn btn-default">
-									<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $alarm['Alarm']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $alarm['Alarm']['id'] ))); ?>
+								<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+									<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $alarm['Alarm']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $alarm['Alarm']['id'] ))); ?>
 								</button>
 							</div>
 						</div>			

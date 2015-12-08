@@ -27,17 +27,20 @@
 						<div class="btn-group" role="group" aria-label="...">
 							<div class="btn-group" role="group">
 								<button type="button" class="btn btn-default">
-									<?php echo $this->Html->link(__('Expandir'), array('action' => 'view', $user['User']['id'])); ?>
+								<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+									<?php echo $this->Html->link(__('Ver'), array('action' => 'view', $user['User']['id'])); ?>
 								</button>
 							</div>
 							<div class="btn-group" role="group">
 								<button type="button" class="btn btn-default">
+								<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 									<?php echo $this->Html->link(__('Editar'), array('action' => 'edit', $user['User']['id'])); ?>
 								</button>
 							</div>
 							<div class="btn-group" role="group">
 								<button type="button" class="btn btn-default">
-									<?php echo $this->Form->postLink(__('Eliminar'), array('action' => 'delete', $user['User']['id']), array('confirm' => __('Está segur@ de que desea eliminar su usuario?'))); ?>
+								<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+									<?php echo $this->Form->postLink(__('Borrar'), array('action' => 'delete', $user['User']['id']), array('confirm' => __('Está segur@ de que desea eliminar su usuario?'))); ?>
 								</button>
 							</div>
 						</div>			
