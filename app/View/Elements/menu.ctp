@@ -10,36 +10,38 @@
               </a>
             </div>
 
-
-
-				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						<li class="active"><?php echo $this->Html->link(__('Mi agenda', true), array('controller'=>'events','action' => 'index')); ?></li>
-						<!-- <li class="active"><a href="#">Home</a></li> -->
-						<li class="active"><?php echo $this->Html->link(__('Alarmas', true), array('controller'=>'alarms','action' => 'index')); ?></li>
-						<!-- <li class="active"><a href="#">Home</a></li> -->
-						<li class="active"><?php echo $this->Html->link(__('Categorías', true), array('controller'=>'categories','action' => 'index')); ?></li>
-						<!-- <li class="active"><a href="#">Home</a></li> -->
-						<li class="active"><?php echo $this->Html->link(__('Prioridades', true), array('controller'=>'priorities','action' => 'index')); ?></li>
-						<!-- <li class="active"><a href="#">Home</a></li> -->
-						<li><?php echo $this->Html->link(__('Mi perfil', true), array('controller'=>'users','action' => 'index')); ?></li>
-						<!-- <li><a href="#about">Mi perfil</a></li> -->
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones <span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Personalizar </a></li>
-								<li> <?php echo $this->Html->link('Opciones de alarma',array('controller' => 'alarms','action' => 'cambiar_sonido')) ?> </li>
-							</ul>
-						</li>
-						<?php
-						if ($_SESSION['usernm'] !== null){ 
-							?>
-							<li><?php echo $this->Html->link(__('Salir de: '.$_SESSION['usernm'], true), array('controller'=>'users','action' => 'logout')); ?></li>
-							<?php }
-							?>
+			<?php
+				if (isset($_SESSION['usernm'])){ 
+			?>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><?php echo $this->Html->link(__('Mi agenda', true), array('controller'=>'events','action' => 'index')); ?></li>
+					<!-- <li class="active"><a href="#">Home</a></li> -->
+					<li class="active"><?php echo $this->Html->link(__('Alarmas', true), array('controller'=>'alarms','action' => 'index')); ?></li>
+					<!-- <li class="active"><a href="#">Home</a></li> -->
+					<li class="active"><?php echo $this->Html->link(__('Categorías', true), array('controller'=>'categories','action' => 'index')); ?></li>
+					<!-- <li class="active"><a href="#">Home</a></li> -->
+					<li class="active"><?php echo $this->Html->link(__('Prioridades', true), array('controller'=>'priorities','action' => 'index')); ?></li>
+					<!-- <li class="active"><a href="#">Home</a></li> -->
+					<li><?php echo $this->Html->link(__('Mi perfil', true), array('controller'=>'users','action' => 'index')); ?></li>
+					<!-- <li><a href="#about">Mi perfil</a></li> -->
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opciones <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Personalizar </a></li>
+							<li> <?php echo $this->Html->link('Opciones de alarma',array('controller' => 'alarms','action' => 'cambiar_sonido')) ?> </li>
 						</ul>
+					</li>
+					<?php
+					if (isset($_SESSION['usernm'])){ 
+						?>
+						<li><?php echo $this->Html->link(__('Salir de: '.$_SESSION['usernm'], true), array('controller'=>'users','action' => 'logout')); ?></li>
+						<?php }
+						?>
+					</ul>
 
-					</div><!--/.nav-collapse -->
+				</div><!--/.nav-collapse -->
+				<?php } ?>
 
   <!-- </div>
   	 <div class="container">
