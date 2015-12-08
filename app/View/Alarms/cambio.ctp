@@ -1,30 +1,27 @@
-<br><br><br><br><br><br><br>
 <div class="alarms form">
-<?php echo $this->Form->create('Alarm'); ?>
-	<fieldset>
-
-		<legend><?php echo __('Editar Alarma'); ?></legend>
-		<?php
-			 echo $this->Form->input('id');
-			 $estados = array('Activo' => 'Activo', 'Pausado' => 'Pausado');
-			 echo $this->Form->input('state', array('type' => 'select', 'options' => $estados, 'label'=>'Estado'));
-			 echo $this->Form->input('date', array('label' => 'Fecha'));
-			 echo $this->Form->input('sound_id', array('label' => 'Sonido'));
-			 $this->Form->input('event_id', array('label' => 'Evento'));
-		?>
-
-	</fieldset>
-
-<?php echo $this->Form->end(__('Guardar')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Acciones'); ?></h3>
-	<ul>
-			<?php foreach ($sounds as $soud): ?>
-						<audio src="/Agendaapp/files/<?php echo ($sound['Sound']['id']); ?>.mp3" controls > </audio>
-			<?php endforeach; ?>
-	
-		<li><?php echo $this->Html->link(__('Volver'), array('action' => 'cambiar_sonido')); ?></li>
-
-	</ul>
+	<div class="row">
+		<div class="col-sm-1">
+		</div>
+		<div class="container-fluid">
+			<div class="panel panel-info col-sm-8">
+				<div class="panel-heading" align="center"><h4><?php echo __('Editar Alarma'); ?></h4></div>
+				<br/>
+				<fieldset>
+					<?php
+					echo $this->Form->input('id');
+					$estados = array('Activo' => 'Activo', 'Pausado' => 'Pausado');
+					echo $this->Form->input('state', array('type' => 'select', 'options' => $estados, 'label'=>'Estado &nbsp;&nbsp;'));
+					echo $this->Form->input('date', array('label' => 'Fecha &nbsp;&nbsp;'));
+					echo $this->Form->input('sound_id', array('label' => 'Sonido &nbsp;&nbsp;'));
+					$this->Form->input('event_id', array('label' => 'Evento '));
+					?>
+				</fieldset>
+				<?php echo $this->Form->end(__('Guardar')); ?>
+				<br/>
+			</div>
+			<div align="left" class="col-sm-3">
+				<h5><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> &nbsp;<?php echo $this->Html->link(__('Volver'), array('action' => 'cambiar_sonido')); ?></h5>
+			</div>
+		</div>
+	</div>
 </div>
