@@ -21,7 +21,13 @@
 				<br/>
 			</div>
 		</div>
+		<div class="col-sm-4">
+			<button type="button" class="btn btn-default">
+				<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+				<?php echo $this->Html->link(__('Registrarse'), array('action' => 'add')); ?>
+			</button>
+
+		</div>
 	</div>
-	<div class="col-sm-4">
-	</div>
+	
 </div>
