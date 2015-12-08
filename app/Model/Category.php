@@ -11,7 +11,15 @@ class Category extends AppModel {
  *
  * @var string
  */
-	public $displayField = 'name';
+public $displayField = 'name';
 
-	public $hasOne = 'Event';
+public $hasOne = 'Event';
+
+public $validate = array(
+	'description' => array(
+		'rule' => array('minLength', 1)
+		), 'name' => array(
+		'rule' => array('minLength', 1)
+		)
+		);
 }

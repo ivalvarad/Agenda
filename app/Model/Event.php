@@ -11,23 +11,28 @@ class Event extends AppModel {
  *
  * @var string
  */
-	public $virtualFields = array('descripcion' => "Event.description");
-	public $displayField = 'description';
-	
-	public $hasOne = 'Alarm';
-	
-    public $belongsTo = array(
-		'User' => array(
-			'className' => 'User',
-			'foreignKey' => 'user_id'
+public $displayField = 'id';
+
+public $hasOne = 'Alarm';
+
+public $belongsTo = array(
+	'User' => array(
+		'className' => 'User',
+		'foreignKey' => 'user_id'
 		),
-		'Category' => array(
-			'className' => 'Category',
-			'foreignKey' => 'category_id'
+	'Category' => array(
+		'className' => 'Category',
+		'foreignKey' => 'category_id'
 		),
-		'Priority' => array(
-			'className' => 'Priority',
-			'foreignKey' => 'priority_id'
+	'Priority' => array(
+		'className' => 'Priority',
+		'foreignKey' => 'priority_id'
+		)
+	);
+
+public $validate = array(
+	'description' => array(
+		'rule' => array('minLength', 1)
 		)
 	);
 }
