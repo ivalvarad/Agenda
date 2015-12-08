@@ -12,6 +12,9 @@
 
 				<tbody>
 						<?php foreach ($alarms as $alarm): ?>
+					 
+						
+
 								<?php
 								if($this->Time->isToday( $alarm['Alarm']['date'], null)&& $alarm['Alarm']['state']=="Activo"){
 								?>
@@ -60,6 +63,8 @@
 								<?php
 								}
 								?>
+								
+				
 				<?php endforeach; ?>	
 					
 				</tbody>
