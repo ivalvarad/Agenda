@@ -15,7 +15,7 @@
 		<tbody>
 			<?php foreach ($users as $user): ?>
 			<?php 
-			if($user['User']['username'] === $_SESSION['usernm']) { ?>
+			if($user['User']['username'] === $this->Session->read('Auth.User.User.username')) { ?>
 				<tr>
 					<td><?php echo h($user['User']['name']); ?>&nbsp;</td>
 					<td><?php echo h($user['User']['lastname']); ?>&nbsp;</td>
