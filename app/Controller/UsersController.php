@@ -132,7 +132,7 @@ class UsersController extends AppController {
 					  $this->User->set('picture', $this->request->data['User']['archivo']['name']);
 					  $this->User->save();
 				}
-				$this->Flash->success(__('The user has been saved'));
+				//$this->Flash->success(__('The user has been saved'));
 				return $this->redirect(array('action' => 'index'));
 			}
 			$this->Flash->error(
@@ -190,7 +190,8 @@ class UsersController extends AppController {
 	public function login() {
 		if ($this->request->is('post')) {
 			if($this->Auth->login($this->request->data)) {
-				$_SESSION['usernm'] = $this->request->data['User']['username'];
+				//$_SESSION['usernm'] = $this->request->data['User']['username'];
+				//$_SESSION['usernm'] = $this->Session->read('Auth.User.User.username');
 				return $this->redirect($this->Auth->redirectUrl());
 			}
 			$this->Flash->error(__('Invalid username or password, try again'));
