@@ -34,7 +34,7 @@ class EventsController extends AppController {
 	public function filtro_categoria_trabajo() {
 		$this->set('users', $this->User->find('all'));
 		$categoriesTrabajo = $this->Event->find('all', array(
-			'conditions' => array('Event.category_id' => 1), 
+			'conditions' => array('Event.category_id' => 4), 
 			));
 		$this->set('categoriesTrabajo', $categoriesTrabajo);
 		
@@ -65,21 +65,21 @@ class EventsController extends AppController {
 	public function filtro_prioridad_alta() {
 		$this->set('users', $this->User->find('all'));	
 		$prioritiesAlta = $this->Event->find('all', array(
-		'conditions' => array('Event.priority_id' => 1), 
+		'conditions' => array('Event.priority_id' => 8), 
 		));
 	  $this->set('prioritiesAlta', $prioritiesAlta);  
 	}
  	public function filtro_prioridad_media() {
 		$this->set('users', $this->User->find('all'));	
 		$prioritiesMedia = $this->Event->find('all', array(
-		'conditions' => array('Event.priority_id' => 2), 
+		'conditions' => array('Event.priority_id' =>9), 
 		));
 		$this->set('prioritiesMedia', $prioritiesMedia);  
 	}
  	public function filtro_prioridad_baja() {
 		$this->set('users', $this->User->find('all'));	
 		$prioritiesBaja = $this->Event->find('all', array(
-		'conditions' => array('Event.priority_id' => 3), 
+		'conditions' => array('Event.priority_id' => 10), 
 		));
 		$this->set('prioritiesBaja', $prioritiesBaja);  
  }
